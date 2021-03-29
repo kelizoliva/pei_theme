@@ -1,0 +1,45 @@
+.layout--ptc-app-ui-left .l-header {
+  color: #000000;
+  background: #ffffff;
+  border-bottom: solid #d7d8d7 1px;
+}
+.welcome {
+  display: inline-block;
+  cursor: pointer;
+}
+.welcome:hover {
+  
+}
+.welcome:before {
+  content: "";
+  display: inline-block;
+  background: url('../images/profile.svg') no-repeat;
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.welcome:after {
+  content: "\25BE";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+}
+.welcome ul.menu-tree {
+  display: none;
+}
+.navigation a img {
+  -webkit-transition: 1s -webkit-filter linear;
+  -moz-transition: 1s -moz-filter linear;
+  -moz-transition: 1s filter linear;
+  -ms-transition: 1s -ms-filter linear;
+  -o-transition: 1s -o-filter linear;
+  transition: 1s filter linear, 1s -webkit-filter linear;
+  }
+.navigation a:hover img {
+  filter: brightness(50%);
+  }
+.l-header .menu > li, .header-menu li {
+  float: none;
+}
