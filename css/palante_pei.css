@@ -1,44 +1,171 @@
-/********* Top Bar *************/
+/*************************** Keyframes *******************************/
+@keyframes opacity { 
+    from { opacity:0; } 
+    to { opacity: 1; } 
+}
+@-moz-keyframes opacity { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+@-ms-keyframes opacity { 
+    from {opacity:0; } 
+    to { opacity: 1; } 
+}
+@-o-keyframes opacity { 
+    from {opacity:0; } 
+    to { opacity: 1; } 
+}
+@-webkit-keyframes opacity { 
+    from { opacity:0; } 
+    to { opacity: 1; } 
+}
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+@-moz-keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+@-ms-keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+@-o-keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+@-webkit-keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+@keyframes expand {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/*************************** Top Bar *******************************/
 .layout--ptc-app-ui-left .l-header {
   color: #000000;
   background: #ffffff;
   border-bottom: solid #d7d8d7 1px;
 }
+.l-header a {
+  color: #000000;
+}
+
+/*** User Menu ***/
 .welcome {
   display: inline-block;
   cursor: pointer;
+  position: relative;
 }
 .welcome:before {
   content: "";
   display: inline-block;
   background: url('../images/profile.svg') no-repeat;
   background-size: cover;
-  width: 15px;
-  height: 15px;
-  margin-right: 10px;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1rem;
 }
-.welcome:after {
+.welcome span.caret:after {
   content: "\25BE";
   display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-left: 10px;
+  width: 1rem;
+  height: 1rem;
+  margin-left: .5rem;
 }
 .welcome ul.menu-tree {
   display: none;
+  position: absolute;
+  background: #ffffff;
+  border-bottom: 1px solid #d7d8d7;
+  z-index: 100;
+  color: #000000; 
 }
 .welcome:hover ul.menu-tree {
   display: block;
+  opacity: 1;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
 }
 .l-header .menu > li, .header-menu li {
   float: none;
 }
-.block-pei-menu-searchbar input {
+@media (min-width: 62em) {
+	.l-header .menu > li {
+		font-size: 1em;
+	}
+}
+@media (min-width: 34em) {
+	.l-header .menu > li {
+	    font-size: .75em;
+	}
+	.l-header .menu a {
+		padding: 1.25rem 1.25rem 0 1.25rem;
+	}
+	.l-header .menu li:last-child a {
+  	padding-bottom: 1.25rem;
+}
+
+/*** Search Bar ***/
+#search-bar {
+  position: relative;
+}
+#search-bar input {
   padding-left: 20px;
   background-image: url('../images/');
 }
+#search-bar-results {
+  position: absolute;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #d7d8d7;
+}
+#search-bar-results .contact-result {
+  animation: expand .5s ease-in-out;
+}
 
-/********* Side Bar *************/
+
+/*************************** Side Bar *******************************/
 .navigation a img {
   -webkit-transition: 1s -webkit-filter linear;
   -moz-transition: 1s -moz-filter linear;
