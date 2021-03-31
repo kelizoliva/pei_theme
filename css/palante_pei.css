@@ -1,3 +1,4 @@
+/********* Top Bar *************/
 .layout--ptc-app-ui-left .l-header {
   color: #000000;
   background: #ffffff;
@@ -6,9 +7,6 @@
 .welcome {
   display: inline-block;
   cursor: pointer;
-}
-.welcome:hover {
-  
 }
 .welcome:before {
   content: "";
@@ -29,6 +27,18 @@
 .welcome ul.menu-tree {
   display: none;
 }
+.welcome:hover ul.menu-tree {
+  display: block;
+}
+.l-header .menu > li, .header-menu li {
+  float: none;
+}
+.block-pei-menu-searchbar input {
+  padding-left: 20px;
+  background-image: url('../images/');
+}
+
+/********* Side Bar *************/
 .navigation a img {
   -webkit-transition: 1s -webkit-filter linear;
   -moz-transition: 1s -moz-filter linear;
@@ -40,6 +50,3 @@
 .navigation a:hover img {
   filter: brightness(50%);
   }
-.l-header .menu > li, .header-menu li {
-  float: none;
-}
