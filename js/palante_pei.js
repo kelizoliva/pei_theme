@@ -2,6 +2,12 @@ Backdrop.behaviors.base = {
   attach: function(context, settings) {
     $(function () {
       $('.block-system-user-menu .menu-tree').wrap( '<div class="welcome">Welcome, NAME <span class="caret"></span></div>' );
+
+      // Accordion header buttons
+      $('.views-accordion-header .actions a').click(function () {
+        self.location.href = $(this).attr("href");
+        return false;
+      });
     });
   }
 };
