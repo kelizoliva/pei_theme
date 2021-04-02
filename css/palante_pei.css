@@ -144,6 +144,7 @@
 	}
 	.l-header .menu li:last-child a {
   	padding-bottom: 1.25rem;
+  }
 }
 
 /*** Search Bar ***/
@@ -177,3 +178,43 @@
 .navigation a:hover img {
   filter: brightness(50%);
   }
+  
+/*************************** Modal *******************************/
+.modal {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #272929;
+  padding: 10px;
+  min-width: 75px;
+  min-height: 75px;
+}
+.modal .toggle {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+  background-image: url('../images/add.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-origin: content-box;
+}
+.modal.open .toggle {
+  width: 20px;
+  height: 20px;
+  right: unset;
+  bottom: unset;
+  -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.modal.open .block-pei-menu-pei-add-links {
+  display: block;
+}
+.modal .block-pei-menu-pei-add-links {
+  display: none;
+}
