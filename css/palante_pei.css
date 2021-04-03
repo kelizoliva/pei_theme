@@ -19,6 +19,26 @@
     from { opacity:0; } 
     to { opacity: 1; } 
 }
+@keyframes background { 
+    from { background-color:#ffffff; } 
+    to { background-color: #f4f4f1; } 
+}
+@-moz-keyframes background { 
+    from { background-color:#ffffff; } 
+    to { background-color: #f4f4f1; } 
+}
+@-ms-keyframes background { 
+    from { background-color:#ffffff; } 
+    to { background-color: #f4f4f1; } 
+}
+@-o-keyframes background { 
+    from { background-color:#ffffff; } 
+    to { background-color: #f4f4f1; } 
+}
+@-webkit-keyframes background { 
+    from { background-color:#ffffff; } 
+    to { background-color: #f4f4f1; } 
+}
 @keyframes growDown {
   0% {
     transform: scaleY(0)
@@ -90,6 +110,9 @@
 .l-header a {
   color: #000000;
 }
+.l-header a:hover {
+  font-weight: 900;
+}
 
 /*** User Menu ***/
 .welcome {
@@ -119,7 +142,8 @@
   background: #ffffff;
   border-bottom: 1px solid #d7d8d7;
   z-index: 100;
-  color: #000000; 
+  color: #000000;
+  min-width: 150px;
 }
 .welcome:hover ul.menu-tree {
   display: block;
@@ -152,17 +176,37 @@
   position: relative;
 }
 #search-bar input {
-  padding-left: 20px;
-  background-image: url('../images/');
+  padding: 10px 10px 10px 40px;
+  background-image: url('../images/search.svg');
+  background-repeat: no-repeat;
+  border-width:0px;
+  border:none;
+  font-size: 20px;
+  background-size: 20px;
+  background-position-x: 10px;
+  background-position-y: center;
+  border-radius: 10px;
+}
+#search-bar input:focus , .filled-background{
+  border: none;
+  outline: none;
+  animation: background 300ms ease-in-out forwards;
 }
 #search-bar-results {
   position: absolute;
   z-index: 100;
-  background: #ffffff;
   border-bottom: 1px solid #d7d8d7;
+  animation: background 300ms ease-in-out forwards;
+  margin-left: 20px;
+  max-width: 225px;
 }
 #search-bar-results .contact-result {
   animation: expand .5s ease-in-out;
+  min-width: 150px;
+  padding: 5px 1em;
+  word-break: break-word;
+  padding-left: 3em;
+  text-indent: -2em;
 }
 
 
@@ -188,6 +232,7 @@
   padding: 10px;
   min-width: 75px;
   min-height: 75px;
+  border-radius: 15px 0 0 0;
 }
 .modal .toggle {
   position: absolute;
@@ -214,7 +259,72 @@
 }
 .modal.open .block-pei-menu-pei-add-links {
   display: block;
+  padding: 15px;
 }
 .modal .block-pei-menu-pei-add-links {
+  display: none;
+}
+.modal ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+.modal a {
+  text-decoration: none;
+}
+.modal a:hover {
+  background: #006C92;
+  color: #ffffff;
+}
+.add-activity {
+  cursor: pointer;
+}
+.add-activity ul {
+  display: none;
+}
+.add-activity ul.open {
+  display: block;
+  animation: growDown 300ms ease-in-out forwards;
+}
+.modal h2 {
+  color: #ffffff;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.modal span.caret:after {
+  content: "\25BE";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: .5rem;
+  color: #ffffff;
+} 
+
+
+/*************************** Dashlets *******************************/
+
+.dashlet {
+  background: #f4f4f1;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 16px!important;
+}
+.block-views-educators-recent-activity-view-added-by-educator-block .views-row {
+  width: 100%;
+}
+.block-views-educators-aggregate-activity-view-my-teen-council2-block .views-field-activity-type {
+  font-size: 20px;
+  font-weight: 900;
+}
+.block-views-program-administrators-top-and-bottom-teen-councils-block .view .view .views-row {
+  width: 100%;
+}
+
+/*************************** Misc Overrides *******************************/
+.crm-footer {
+  display: none;
+}
+#crm-container #access {
   display: none;
 }

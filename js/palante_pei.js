@@ -1,9 +1,22 @@
 Backdrop.behaviors.base = {
   attach: function(context, settings) {
     $(function () {
-      $('.block-system-user-menu .menu-tree').wrap( '<div class="welcome">Welcome, NAME <span class="caret"></span></div>' );
-      $('.modal .toggle').click(function() {
-        $(this).parent().toggleClass('open');
+      $('#search-bar-box input').on('change', function() {
+        var value = $.trim($(this).val());
+        $(this).toggleClass('filled-background', value.length !== 0);
+      }).change();
+      $('.block-system-user-menu .menu-tree').wrap( '<div class="welcome">Welcome <span class="caret"></span></div>' );
+      $('.modal .toggle').bind("click", function(e){
+          $(this).parent().toggleClass('open');
+      });
+      $('.add-activity h2').bind("click", function(e){
+          $(this).siblings('ul').toggleClass('open');
+      });
+      $(document).on("click", function(event){
+        if(!$(event.target).closest(".modal").length){
+            $('.modal').removeClass('open');
+            $('.modal, .add-activity ul').removeClass('open');
+        }
       });
     });
   }
