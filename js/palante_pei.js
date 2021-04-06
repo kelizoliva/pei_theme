@@ -18,6 +18,12 @@ Backdrop.behaviors.base = {
             $('.modal, .add-activity ul').removeClass('open');
         }
       });
+      // Accordion header buttons
+      $('.views-accordion-header .actions a').click(function () {
+        self.location.href = $(this).attr("href");
+        return false;
+      });
+
     });
   }
 };
