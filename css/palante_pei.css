@@ -310,6 +310,27 @@
   margin: 10px;
   padding: 16px!important;
 }
+.header-row {
+  padding: 0!important;
+}
+.icon-expand {
+  background-image: url('../images/expand.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-origin: content-box;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: .5rem;
+  color: #000000;
+}
+.ui-accordion .ui-accordion-content {
+  padding: 0;
+}
+.ui-accordion .ui-accordion-content .views-field-activity-type {
+  font-size: 18px;
+  font-weight: 900;
+}
 .block-views-educators-recent-activity-view-added-by-educator-block .views-row {
   width: 100%;
 }
