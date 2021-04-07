@@ -23,8 +23,7 @@ Backdrop.behaviors.base = {
         self.location.href = $(this).attr("href");
         return false;
       });
-      $('.ui-accordion-content').addClass('container gutters').css("display", "flex");
-
+      $('.summary .ui-accordion-content').addClass('container gutters');
     });
   }
 };

@@ -327,6 +327,9 @@
 .ui-accordion .ui-accordion-content {
   padding: 0;
 }
+.ui-accordion .ui-accordion-content-active {
+  display: flex!important;
+}
 .ui-accordion .ui-accordion-content .views-field-activity-type {
   font-size: 18px;
   font-weight: 900;
