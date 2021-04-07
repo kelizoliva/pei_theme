@@ -24,6 +24,7 @@ Backdrop.behaviors.base = {
         return false;
       });
       $('.summary .ui-accordion-content').addClass('container gutters');
+      $('.summary .views-view-accordion').addClass('col-12');
     });
   }
 };
