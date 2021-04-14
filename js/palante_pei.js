@@ -5,7 +5,6 @@ Backdrop.behaviors.base = {
         var value = $.trim($(this).val());
         $(this).toggleClass('filled-background', value.length !== 0);
       }).change();
-      $('.block-system-user-menu .menu-tree').wrap( '<div class="welcome">Welcome <span class="caret"></span></div>' );
       $('.modal .toggle').bind("click", function(e){
           $(this).parent().toggleClass('open');
       });
@@ -23,8 +22,12 @@ Backdrop.behaviors.base = {
         self.location.href = $(this).attr("href");
         return false;
       });
-      $('.summary .ui-accordion-content').addClass('container gutters');
-      $('.summary .views-view-accordion').addClass('col-12');
     });
   }
 };
+
+$(window).on('load', function (e) {
+  $('.block-system-user-menu .menu-tree').wrap( '<div class="welcome">Welcome <span class="caret"></span></div>' );
+  $('.summary .ui-accordion-content').addClass('container');
+  $('.summary .views-view-accordion').addClass('col-12');
+});

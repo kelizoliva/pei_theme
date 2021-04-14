@@ -1,0 +1,12 @@
+h3 {
+	margin: 0;
+	padding: 0 0 0.5rem;
+	font-family: 'd-din_expdinexp-bold', sans-serif;
+  font-size: 20px;
+}
+.ui-accordion .ui-accordion-content .views-field-activity-type h3 {
+  font-size: 15px;
+}
+.ui-accordion .ui-accordion-content {
+  font-size: .9em;
+}
