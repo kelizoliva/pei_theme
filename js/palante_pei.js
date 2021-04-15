@@ -27,7 +27,7 @@ Backdrop.behaviors.base = {
 };
 
 $(window).on('load', function (e) {
-  $('.block-system-user-menu .menu-tree').wrap( '<div class="welcome">Welcome <span class="caret"></span></div>' );
+  $('.block-system-user-menu .menu-tree').wrap( '<div class="welcome top-padding-10 bottom-padding-10">Welcome <span class="caret"></span></div>' );
   $('.summary .ui-accordion-content').addClass('container');
   $('.summary .views-view-accordion').addClass('col-12');
 });

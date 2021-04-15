@@ -174,14 +174,15 @@
 /*** Search Bar ***/
 #search-bar {
   position: relative;
+  padding: 5px 0;
 }
 #search-bar input {
-  padding: 10px 10px 10px 40px;
+  padding: 6px 10px 6px 40px;
   background-image: url('../images/search.svg');
   background-repeat: no-repeat;
   border-width:0px;
   border:none;
-  font-size: 20px;
+  font-size: 18px;
   background-size: 20px;
   background-position-x: 10px;
   background-position-y: center;
@@ -209,8 +210,16 @@
   text-indent: -2em;
 }
 
-
 /*************************** Side Bar *******************************/
+@media (min-width: 768px) {
+  .container > .l-navigation.col-xs-1 {
+    max-width: 5.3333333333%;
+  }
+  .container > .l-content.col-xs-11 {
+    max-width: 94.6666666667%;
+    flex: 0 1 94.6666666667%;
+  }
+}
 .navigation a img {
   -webkit-transition: 1s -webkit-filter linear;
   -moz-transition: 1s -moz-filter linear;
@@ -343,6 +352,8 @@
 .ui-accordion .ui-widget-content {
   border: none;
 }
+
+/** recent activities **/
 .block-views-educators-recent-activity-view-added-by-educator-block .views-row {
   width: 100%;
 }
@@ -365,6 +376,9 @@
 }
 .js .recent-activities .dropbutton-widget {
   border: none;
+}
+.js .recent-activities .dropbutton-widget .dropbutton {
+  padding: 0 .5em;
 }
 .recent-activities .dropbutton-wrapper {
   top: -4px;
