@@ -6,9 +6,10 @@ Backdrop.behaviors.base = {
         var value = $.trim($(this).val());
         $(this).toggleClass('filled-background', value.length !== 0);
       }).change();
-      // Add modal
+      // Add button modal
       $('.modal .toggle').bind("click", function(e){
           $(this).parent().toggleClass('open');
+          $('.add-activity ul, .add-activity span.caret').removeClass('open');
       });
       $('.add-activity h2, .add-activity span.caret').bind("click", function(e){
           $(this).siblings('ul').toggleClass('open');

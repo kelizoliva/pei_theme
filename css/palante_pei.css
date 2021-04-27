@@ -244,27 +244,40 @@
   right: 0;
   background-color: #272929;
   padding: 10px;
-  min-width: 62px;
-  min-height: 62px;
-  border-radius: 15px 0 0 0;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 65px 0 0 0;
+}
+.modal.open {
+  border-radius: 40px 0 0 0;
 }
 .modal .toggle {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  left: 10px;
-  top: 10px;
+  right: 0;
+  bottom: 5px;
+  left: 14px;
+  top: 14px;
   cursor: pointer;
   background-image: url('../images/add.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-origin: content-box;
+  -webkit-transition: 1s -webkit-filter linear;
+  -moz-transition: 1s -moz-filter linear;
+  -moz-transition: 1s filter linear;
+  -ms-transition: 1s -ms-filter linear;
+  -o-transition: 1s -o-filter linear;
+  transition: 1s filter linear, 1s -webkit-filter linear;
+}
+.modal .toggle:hover {
+  filter: brightness(50%);
 }
 .modal.open .toggle {
   width: 20px;
   height: 20px;
-  right: unset;
+  left: unset;
   bottom: unset;
+  right: 1em;
   -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -323,6 +336,9 @@
   display: inline-block;
   text-transform: uppercase;
   font-size: 15px;
+}
+.modal h2:hover {
+  color: #4fb646;
 }
 .modal span.caret:after {
   content: "\25BE";
