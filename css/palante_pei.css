@@ -101,6 +101,11 @@
   }
 }
 
+/*************************** Global *******************************/
+::selection {
+  color: #006C92;
+}
+
 /*************************** Top Bar *******************************/
 .layout--ptc-app-ui-left .l-header {
   color: #000000;
@@ -239,8 +244,8 @@
   right: 0;
   background-color: #272929;
   padding: 10px;
-  min-width: 75px;
-  min-height: 75px;
+  min-width: 62px;
+  min-height: 62px;
   border-radius: 15px 0 0 0;
 }
 .modal .toggle {
@@ -278,12 +283,18 @@
   padding-left: 0;
   margin-left: 0;
 }
+.modal li {
+  margin-left: -.5em;
+}
 .modal a {
   text-decoration: none;
+  color: #ffffff;
+  padding: .2em .5em;
+  border-radius: 2px;
 }
 .modal a:hover {
-  background: #006C92;
-  color: #ffffff;
+  background: #4fb646;
+  color: #000000;
 }
 .add-activity {
   cursor: pointer;
@@ -295,6 +306,18 @@
   display: block;
   animation: growDown 300ms ease-in-out forwards;
 }
+.add-activity li {
+  margin-left: .5em;
+}
+.add-activity li:before {
+  content: "-";
+  color: #ffffff;
+  margin-right: .2em;
+  font-weight: 900;
+}
+.add-activity li:hover:before {
+  color: #4fb646;
+}
 .modal h2 {
   color: #ffffff;
   display: inline-block;
@@ -305,11 +328,13 @@
   content: "\25BE";
   display: inline-block;
   width: 1rem;
-  height: 1rem;
+  height: 1.6rem;
   margin-left: .5rem;
   color: #ffffff;
-} 
-
+}
+.modal span.caret.open:after {
+  transform: rotate(-180deg);
+}
 
 /*************************** Dashlets *******************************/
 
