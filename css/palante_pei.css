@@ -461,21 +461,29 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
 .ui-accordion .ui-widget-content {
   border: none;
 }
+.ui-accordion .ui-accordion-content .view-teen-council-statistics .views-field-activity-type {
+  margin-left: .5em;
+}
 /** statistics **/
-.block-views-educators-aggregate-activity-view-my-teen-council2-block .views-field-activity-type {
+.aggregate-activity .views-field-activity-type {
   font-size: 20px;
   font-weight: 900;
 }
-.block-views-educators-aggregate-activity-view-my-teen-council2-block .views-row .views-field:not(:first-child) {
+.aggregate-activity .views-row .views-field:not(:first-child) {
   margin-left: .5em;
 }
-.block-views-educators-aggregate-activity-view-my-teen-council2-block .views-row {
+.aggregate-activity .views-row {
   margin-bottom: 1em;
 }
 /** members **/
-.block-views-educators-my-teen-council-member-view-block .actions {
+.summary .actions {
   margin-left: 2em;
   float: right;
+  
+}
+.summary .view-member-statistics, .summary .view-teen-council-statistics {
+    padding-top: 2em;
+    margin-bottom: -3.5em;
 }
 
 /** recent activities **/
