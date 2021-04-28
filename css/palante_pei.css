@@ -105,15 +105,28 @@
 ::selection {
   color: #006C92;
 }
+.button, 
+input.form-submit, 
+input.button-primary, 
+button.button-primary, 
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+  background: #4fb646;
+  cursor: pointer;
+}
+input.button-primary:hover, input.button-primary:focus, button.button-primary:hover, button.button-primary:focus {
+  color: #282A29;
+}
 
 /*************************** Top Bar *******************************/
 .layout--ptc-app-ui-left .l-header {
-  color: #000000;
+  color: #282A29;
   background: #ffffff;
   border-bottom: solid #d7d8d7 1px;
 }
 .l-header a {
-  color: #000000;
+  color: #282A29;
 }
 .l-header a:hover {
   font-weight: 900;
@@ -147,7 +160,7 @@
   background: #ffffff;
   border-bottom: 1px solid #d7d8d7;
   z-index: 100;
-  color: #000000;
+  color: #282A29;
   min-width: 150px;
 }
 .welcome:hover ul.menu-tree {
@@ -237,7 +250,7 @@
   filter: brightness(50%);
   }
   
-/*************************** Modal *******************************/
+/*************************** Add button Modal *******************************/
 .modal {
   position: fixed;
   bottom: 0;
@@ -247,6 +260,7 @@
   min-width: 50px;
   min-height: 50px;
   border-radius: 65px 0 0 0;
+  z-index: 100;
 }
 .modal.open {
   border-radius: 40px 0 0 0;
@@ -258,6 +272,7 @@
   left: 14px;
   top: 14px;
   cursor: pointer;
+  z-index: 101;
   background-image: url('../images/add.svg');
   background-repeat: no-repeat;
   background-size: contain;
@@ -307,7 +322,7 @@
 }
 .modal a:hover {
   background: #4fb646;
-  color: #000000;
+  color: #282A29;
 }
 .add-activity {
   cursor: pointer;
@@ -352,6 +367,59 @@
   transform: rotate(-180deg);
 }
 
+/*************************** CiviCRM General Modal *******************************/
+.crm-container.ui-dialog {
+  padding: 0;
+}
+.crm-container.ui-dialog.ui-widget.ui-widget-content {
+  border: none;
+}
+.crm-container .ui-dialog-title {
+  background: none;
+  padding-left: 0;
+  font-size: 20px;
+}
+.ui-dialog .ui-dialog-titlebar {
+  padding: 2em 2em
+} 
+.ui-dialog .ui-dialog-titlebar-close {
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+.crm-container .ui-dialog-titlebar .ui-button:hover {
+  background-color: #4fb646;
+}
+.crm-container .ui-dialog-titlebar.ui-widget-header {
+  background:  #272929;
+}
+.crm-container .ui-dialog-titlebar.ui-widget-header {
+  border: 0;
+}
+.crm-container .crm-dialog-titlebar-print, .crm-container .crm-dialog-titlebar-resize {
+  display: none;
+}
+.crm-container a.button, .crm-container a.button:link, .crm-container a.button:visited, .crm-container .ui-dialog-buttonset .ui-button, .crm-container .crm-button {
+  background: #4fb646;
+  padding: 1em;
+  border-radius: 0;
+  border: 0;
+  text-shadow: none;
+}
+.crm-container .crm-button:hover, .crm-container .crm-button:focus, .crm-container .ui-dialog-buttonset .ui-button:hover, .crm-container .ui-dialog-buttonset .ui-button:focus, .crm-container a.button:hover, .crm-container a.button:focus {
+  color: #ffffff;
+  background: #272929;
+}
+#crm-container .help, .crm-container #help {
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 1px 2px 11px rgba(0, 0, 0, 0.3)!important;
+  color: #282A29;
+  padding: 10px;
+  border-radius: 0;
+  border-left: 3px solid #4fb646;
+  margin: 2em;
+}
 /*************************** Dashlets *******************************/
 
 .dashlet {
@@ -372,7 +440,7 @@
   width: 1rem;
   height: 1rem;
   margin-left: .5rem;
-  color: #000000;
+  color: #282A29;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -393,22 +461,35 @@
 .ui-accordion .ui-widget-content {
   border: none;
 }
-
-/** recent activities **/
-.block-views-educators-recent-activity-view-added-by-educator-block .views-row {
-  width: 100%;
-}
+/** statistics **/
 .block-views-educators-aggregate-activity-view-my-teen-council2-block .views-field-activity-type {
   font-size: 20px;
   font-weight: 900;
 }
-.block-views-program-administrators-top-and-bottom-teen-councils-block .view .view .views-row {
+.block-views-educators-aggregate-activity-view-my-teen-council2-block .views-row .views-field:not(:first-child) {
+  margin-left: .5em;
+}
+.block-views-educators-aggregate-activity-view-my-teen-council2-block .views-row {
+  margin-bottom: 1em;
+}
+/** members **/
+.block-views-educators-my-teen-council-member-view-block .actions {
+  margin-left: 2em;
+  float: right;
+}
+
+/** recent activities **/
+.block-views-educators-recent-activity-view-added-by-educator-block .views-row, .block-views-program-administrators-top-and-bottom-teen-councils-block .view .view .views-row  {
   width: 100%;
 }
 .recent-activities .views-row {
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px solid #e2e5e5;
+}
+.recent-activities .views-row a {
+  text-decoration: none;
+  font-weight: 900;
 }
 .recent-activities .dropbutton .dropbutton-action > * {
   padding: 2px;
@@ -439,4 +520,63 @@
 }
 #crm-container #access {
   display: none;
+}
+.logged-in ul.primary li a, .logged-in ul.primary li a:visited, .logged-in ul.primary li a:hover, .logged-in ul.primary li.active a, .expand-dropdown-tabs-control, .responsive-tabs-mobile .expand-dropdown-tabs-control:before, .responsive-tabs-mobile .expand-dropdown-tabs-label {
+  border-color: #4fb646;
+}
+.crm-container .btn-secondary, .crm-container #actions #crm-submit-buttons button.crm-form-submit, .crm-container #crm-submit-buttons #actions button.crm-form-submit, .crm-container #actions button.crm-button.crm-form-submit, .crm-container #actions .crm-hover-button, .crm-container #actions .ui-dialog-buttonset .ui-button, .crm-container .ui-dialog-buttonset #actions .ui-button, .crm-container #actions a.button, .crm-container #actions input[type=button], .crm-container #crm-main-content-wrapper div.action-link #crm-submit-buttons button.crm-form-submit, .crm-container #crm-submit-buttons #crm-main-content-wrapper div.action-link button.crm-form-submit, .crm-container #crm-main-content-wrapper div.action-link button.crm-button.crm-form-submit, .crm-container #crm-main-content-wrapper div.action-link .crm-hover-button, .crm-container #crm-main-content-wrapper div.action-link .ui-dialog-buttonset .ui-button, .crm-container .ui-dialog-buttonset #crm-main-content-wrapper div.action-link .ui-button, .crm-container #crm-main-content-wrapper div.action-link a.button, .crm-container #crm-main-content-wrapper div.action-link input[type=button], .crm-container .btn-primary, .crm-container .ui-dialog .ui-dialog-content .button:not(.hr-job-info-close), .crm-container #crm-submit-buttons button.crm-form-submit:not(.cancel), .crm-container button.crm-form-submit.crm-button:not(.cancel), .crm-container .crm-form-submit.crm-hover-button:not(.cancel), .crm-container .ui-dialog-buttonset .crm-form-submit.ui-button:not(.cancel), .crm-container a.crm-form-submit.button:not(.cancel), .crm-container input.crm-form-submit:not(.cancel)[type=button], .crm-container *:not(.crm-submit-buttons)>div.crm-button:not([class*='crm-button-type-']), .crm-container *:not(.crm-submit-buttons)>button.crm-button:not([class*='crm-button-type-']), .page-civicrm-group .crm-submit-buttons a.newGroup.button, .page-civicrm-admin #crm-main-content-wrapper .crm-submit-buttons a.button, .page-civicrm-a #crm-main-content-wrapper .crm-submit-buttons a.button, .page-civicrm-a.page-civicrm-a .crmCaseType .crm-button[crm-icon=fa-check], .crm-container.ui-dialog .ui-dialog-content .button:not(.hr-job-info-close), body[class*='page-civicrm-report-'] #report-tab-order-by-elements #optionFieldLink>.form-link, .crm-container #discount [name='_qf_Fee_submit'], .crm-container #contact-summary-relationship-tab.view-content div.action-link>a.button {
+  background: #4fb646;
+}
+#crm-container table.crm-inline-edit-form td, #crm-container div.crm-inline-edit-form {
+  background-color: transparent;
+}
+#crm-container .ui-state-default, #crm-container .ui-widget-content .ui-state-default, #crm-container .ui-widget-header .ui-state-default {
+  background: #f6f7f8;
+  border-right: #4fb646 2px solid;
+  text-transform: uppercase;
+}
+#crm-container .ui-tabs .ui-tabs-nav .ui-corner-all.ui-tabs-active, #crm-container .ui-tabs .ui-tabs-nav .ui-corner-top.ui-tabs-active {
+  border: none;
+  border-right: #4fb646 2px solid;
+  border-bottom: none;
+  background: #282A29;
+  color: #ffffff;
+  border-radius: 0;
+}
+#crm-container .ui-state-default:last-child, #crm-container .ui-widget-content .ui-state-default:last-child, #crm-container .ui-widget-header .ui-state-default:last-child {
+  border-right: none;
+}
+#crm-container .ui-tabs .ui-tabs-nav .ui-corner-all.ui-tabs-active a, #crm-container .ui-tabs .ui-tabs-nav .ui-corner-top.ui-tabs-active a {
+  color: #ffffff;
+}
+.crm-container .ui-tabs .ui-tabs-nav {
+  background: transparent;
+  border-bottom: none;
+}
+.crm-container .ui-tabs .ui-tabs-nav .ui-corner-all, .crm-container .ui-tabs .ui-tabs-nav .ui-corner-top {
+  border-bottom: none;
+}
+#crm-container div.crm-summary-contactname-block {
+  margin-top: 1em;
+}
+#crm-container div.crm-summary-display_name {
+  font-size: 25px;
+}
+.Individual-subtype-icon {
+  display: none;
+}
+.crm-container .dataTables_wrapper, .crm-container .crm-accordion-header:not(.crm-master-accordion-header)+.crm-accordion-body, .crm-container #changeLog .form-item, .crm-container #changeLog>div.bold, .crm-container *:not(.crm-form-block)>h3:not(.crm-severity-info), .crm-container *:not(.crm-form-block)>h3:not(.crm-severity-info)>.selector, .crm-container *:not(.crm-form-block)>h3:not(.crm-severity-info)+div, .crm-container *:not(.crm-form-block)>h3:not(.crm-severity-info)+div>.selector, .crm-container *:not(.crm-form-block)>h3:not(.crm-severity-info)+script+div, .crm-container *:not(.crm-form-block)>h3:not(.crm-severity-info)+script+div>.selector, .crm-container .action-link a.button {
+  box-shadow: none!important;
+}
+.ac_results-inner, .crm-participant-list-inner, .crm-event-links-list-inner, .crm-contribpage-links-list-inner, .crm-contact-actions-list-inner {
+  margin-top: 17px;
+}
+.ac_results {
+  background: none;
+}
+#crm-container .ac_results li {
+  line-height: 20px;
+}
+#crm-contact-actions-list {
+  width: 200px;
 }
