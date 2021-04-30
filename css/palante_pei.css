@@ -513,8 +513,8 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   margin-bottom: 1em;
   margin-top: .5em;
 }
-.summary .views-field-hours-43 .field-content,
-.summary .field-content .views-field-nothing .field-content{
+.summary .general .views-field-hours-43 .field-content,
+.summary .general .views-field-nothing .field-content {
   background: #4fb646;
   padding: .5em;
   display: block;
