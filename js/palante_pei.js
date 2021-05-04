@@ -35,14 +35,30 @@ $(window).on('load', function (e) {
   $('.summary .ui-accordion-content').addClass('container');
   $('.summary .views-view-accordion').addClass('col-12');
   $('.block-views-educators-recent-activity-view-added-by-educator-block .dropbutton-wrapper .first a').addClass('crm-popup');
-  
   // Wrapping data in statistics   
   var rex = new RegExp("([0-9]+\.?[0-9]+)", "gm");
   
   $(".aggregate-activity .views-field-expression-1 span").each(function(){
-      $this.wrap('<div>');
+      $(this).wrap('<div>');
       var $this = $(this);
       var content = $this.html();
       $this.html(content.replace(rex, "<span>$1</span>"));
   });
 });
+
+(function ($) {
+  // CiviCRM modal override auto-sizing
+  $(document).on('dialogopen', function(e) {
+    var $elem = $(e.target);
+    var $elemParent = $elem.parent();
+
+    if ($elemParent.hasClass('crm-container') && $elem.dialog('option', 'resizable')) {
+      $('.crm-dialog-titlebar-resize', $elemParent).trigger('click');
+    }
+    $( document ).ajaxComplete(function() {
+      $('.ui-dialog.crm-container form').addClass('container gutters');
+      $('.ui-dialog.crm-container form .crm-section').addClass('col-6');
+    });
+  });
+})(CRM.$);
+

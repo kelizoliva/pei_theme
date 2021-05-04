@@ -367,7 +367,7 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   transform: rotate(-180deg);
 }
 
-/*************************** CiviCRM General Modal *******************************/
+/*************************** CiviCRM General Dialog *******************************/
 .crm-container.ui-dialog {
   padding: 0;
 }
@@ -410,7 +410,7 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   color: #ffffff;
   background: #272929;
 }
-#crm-container .help, .crm-container #help {
+#crm-container .help, .crm-container #help, .crm-container .help {
   background-color: #ffffff;
   border: none;
   box-shadow: 1px 2px 11px rgba(0, 0, 0, 0.3)!important;
@@ -419,6 +419,40 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   border-radius: 0;
   border-left: 3px solid #4fb646;
   margin: 2em;
+}
+.ui-dialog.crm-container .crm-section .label {
+  float: none;
+  width: auto;
+  text-align: left;
+}
+.ui-dialog.crm-container .crm-section .content {
+  margin-left: 0;
+}
+.ui-dialog.crm-container form {
+  margin: 0 auto;
+}
+.ui-dialog.crm-container form .crm-section .crm-form-radio + label, .ui-dialog.crm-container form .crm-section .crm-form-checkbox + label {
+  float: left;
+}
+.ui-dialog.crm-container form .crm-section .crm-form-radio,
+.ui-dialog.crm-container form .crm-section .crm-form-checkbox {
+  float: left;
+  clear: left;
+}
+.ui-dialog input.crm-form-text[name="email"], .ui-dialog input.crm-form-text[name="guardian_email"] {
+  width: 12em;
+}
+.ui-dialog .container {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    max-width: 760px;
 }
 /*************************** Dashlets *******************************/
 
@@ -460,6 +494,7 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
 .ui-accordion .ui-widget-content {
   border: none;
 }
+
 /** statistics **/
 .aggregate-activity .views-field-activity-type {
   font-size: 20px;
