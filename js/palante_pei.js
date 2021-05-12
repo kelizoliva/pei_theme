@@ -35,7 +35,14 @@ $(window).on('load', function (e) {
   $('.summary .ui-accordion-content').addClass('container');
   $('.summary .views-view-accordion').addClass('col-12');
   $('.block-views-educators-recent-activity-view-added-by-educator-block .dropbutton-wrapper .first a').addClass('crm-popup');
-  // Wrapping data in statistics   
+  $('.view-expanded-views-activities .fieldset-wrapper').addClass('container');
+  $('.view-expanded-views-activities .form-item').not('.view-expanded-views-activities fieldset#edit-filters-date .form-item').not('.view-expanded-views-activities fieldset#edit-more-filters-retreat-end-date .form-item').addClass('col-12 col-xs-6 col-md-4');
+  
+  $('.view-expanded-views-activities fieldset#edit-filters-date').addClass('col-12 col-xs-8');
+  $('.view-expanded-views-activities fieldset#edit-more-filters-retreat-end-date').addClass('col-12 col-xs-8');
+  $('.view-expanded-views-activities fieldset#edit-filters-date .form-item').addClass('col-12 col-xs-6');
+  $('.view-expanded-views-activities fieldset#edit-more-filters-retreat-end-date .form-item').addClass('col-12 col-xs-6');
+  // Wrapping data in statistics
   var rex = new RegExp("([0-9]+\.?[0-9]+)", "gm");
   
   $(".aggregate-activity .views-field-expression-1 span").each(function(){
