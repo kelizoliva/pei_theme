@@ -630,11 +630,11 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   border-collapse: separate;
   border-spacing: 0;
   table-layout: fixed;
-  border: solid #d7d8d7 .5px;
+  border: solid #f9f9f9 .5px;
 }
 .view-expanded-views-activities table.views-table td,
 .view-expanded-views-activities table.views-table th {
-  border: solid #d7d8d7 .5px;
+  border: solid #f9f9f9 .5px;
   padding: 0.5rem 1rem;
 }
 .view-expanded-views-activities table.views-table thead th {
@@ -674,6 +674,79 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   overflow: auto;
 }
 
+/* Form Elements */
+.form-action-buttons {
+  float: right;
+}
+.js fieldset#edit-more-filters,
+.js fieldset#edit-manage-columns {
+  border-bottom: 1px solid #d7d8d7;
+  margin: .5em 0;
+}
+fieldset#edit-filters {
+  margin-bottom: 0;
+}
+fieldset#edit-filters .fieldset-wrapper {
+  margin: 0;
+}
+.select2-container {
+  max-width: 100%;
+}
+.select2-container-multi .select2-choices,
+.form-item input[type='text'] {
+  background-image: none;
+  border-radius: 0;
+  border: solid 1px #d7d8d7;
+  max-width: 100%;
+}
+fieldset#edit-filters-date .fieldset-legend,
+fieldset#edit-more-filters-retreat-end-date .fieldset-legend {
+  position: relative;
+}
+.sliderfield-container {
+  margin-top: 50px;
+}
+.sliderfield .sliderfield-bubble {
+  border: none;
+  padding: 4px 8px;
+  color: #ffffff;
+  background: #4fb646;
+  top: -10px;
+}
+.sliderfield .sliderfield-event-field-container, 
+.sliderfield .form-item-more-filters-hours-value2,
+.sliderfield .form-item-more-filters-people-reached-value2,
+.sliderfield .form-item-more-filters-conversations-value2  {
+  display: none;
+}
+.use-select-2.form-select {
+  max-width: 100%;
+  width: 100%
+}
+.form-type-select .select2-container.select2-container-multi,
+.form-type-select .select2-container {
+  width: unset!important;
+}
+.form-type-select .select2-container.select2-container-multi {
+  width: 100%!important;
+}
+input.form-text {
+  width: 100%;
+}
+.fieldset-wrapper  .form-type-date {
+  margin-bottom: 0;
+}
+.form-item.form-type-checkbox {
+  white-space: inherit;
+}
+.form-item.form-type-checkbox label {
+  display: inline-flex;
+  position: absolute;
+  top: 3px;
+}
+.form-checkboxes .form-item:last-child {
+  margin: 0 0 1.5em
+}
 
 /*************************** Pager *******************************/
 .pager-first, .pager-previous, .pager-next, .pager-last {
