@@ -238,6 +238,10 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
     flex: 0 1 94.6666666667%;
   }
 }
+.navigation .block-content {
+  position: relative;
+  text-align: center;
+}
 .navigation a img {
   -webkit-transition: 1s -webkit-filter linear;
   -moz-transition: 1s -moz-filter linear;
@@ -246,10 +250,24 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   -o-transition: 1s -o-filter linear;
   transition: 1s filter linear, 1s -webkit-filter linear;
   }
-.navigation a:hover img {
+.navigation a:hover img, .navigation.active a img {
   filter: brightness(50%);
   }
-  
+.nav-caption {
+  display: none;
+  position: absolute;
+  transform: rotate(90deg) translate(0, -100%);
+	transform-origin: 0% 0%;
+	top: 2em;
+  background: #4fb646;
+  color: #282A29;
+  border-radius: 5px 5px 0 0;
+  padding: 0 5px;
+  font-weight: 900;
+}
+.nav-caption.active {
+  display: block;
+}  
 /*************************** Add button Modal *******************************/
 .modal {
   position: fixed;
