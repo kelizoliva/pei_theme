@@ -26,6 +26,7 @@ Backdrop.behaviors.base = {
         self.location.href = $(this).attr("href");
         return false;
       });
+      
     });
   }
 };
@@ -73,6 +74,7 @@ $(window).on('load', function (e) {
       var content = $this.html();
       $this.html(content.replace(rex, "<span>$1</span>"));
   });
+      
 });
 
 (function ($) {
@@ -89,5 +91,6 @@ $(window).on('load', function (e) {
       $('.ui-dialog.crm-container form .crm-section').addClass('col-6');
     });
   });
+  
 })(CRM.$);
 

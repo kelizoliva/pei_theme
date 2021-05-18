@@ -256,8 +256,18 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
 .nav-caption {
   display: none;
   position: absolute;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.00000000, M12=-1.00000000, M21=1.00000000, M22=0.00000000,sizingMethod='auto expand')";
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.00000000, M12=-1.00000000, M21=1.00000000, M22=0.00000000,sizingMethod='auto expand');
+  -moz-transform:  matrix(0.00000000, 1.00000000, -1.00000000, 0.00000000, 0, 0) translate(0, -100%);
+  -webkit-transform:  matrix(0.00000000, 1.00000000, -1.00000000, 0.00000000, 0, 0) translate(0, -100%);
+  -o-transform:  matrix(0.00000000, 1.00000000, -1.00000000, 0.00000000, 0, 0) translate(0, -100%);
+  -ms-transform:rotate(90deg) translate(0, -100%);
   transform: rotate(90deg) translate(0, -100%);
-	transform-origin: 0% 0%;
+  -webkit-transform-origin: 0px 0px;
+  -moz-transform-origin: 0px 0px;
+  -ms-transform-origin: 0px 0px;
+  -o-transform-origin: 0px 0px;
+  transform-origin: 0px 0px;
 	top: 2em;
   background: #4fb646;
   color: #282A29;
@@ -641,6 +651,7 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
 }
 
 /*************************** Expanded Views *******************************/
+
 .view-expanded-views-activities table.views-table {
   font-size: 125%;
   margin: 0;
@@ -648,27 +659,28 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   border-collapse: separate;
   border-spacing: 0;
   table-layout: fixed;
-  border: solid #f9f9f9 .5px;
+  border: solid #f9f9f9 1px;
+  position: relative;
 }
 .view-expanded-views-activities table.views-table td,
 .view-expanded-views-activities table.views-table th {
-  border: solid #f9f9f9 .5px;
+  border: solid #f9f9f9 1px;
   padding: 0.5rem 1rem;
 }
 .view-expanded-views-activities table.views-table thead th {
-  padding: 3px;
+  position: -webkit-sticky; /* for Safari */
   position: sticky;
+  background: #f9f9f9;
   top: 0;
   z-index: 1;
+  padding: 3px;
   width: 25vw;
-  background: #f9f9f9;
 }
 .view-expanded-views-activities table.views-table td {
   background: #fff;
   padding: 4px 5px;
   text-align: center;
 }
-
 .view-expanded-views-activities table.views-table tbody th {
   font-weight: 100;
   font-style: italic;
@@ -681,15 +693,19 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   z-index: 2;
 }
 .view-expanded-views-activities table.views-table tbody td.views-field-display-name-1 {
+  position: -webkit-sticky; /* for Safari */
   position: sticky;
   left: 0;
   background: #f9f9f9;
   z-index: 1;
 }
 .view-expanded-views-activities .view-content {
-  width: 100%;
+  width: 92vw;
+  max-width: 100%;
   max-height: 85vh;
-  overflow: auto;
+  overflow: scroll;
+  position: relative;
+  left: 0;
 }
 
 /* Form Elements */
