@@ -63,6 +63,10 @@ $(window).on('load', function (e) {
             $this.parents('.navigation').find('.nav-caption').addClass('active').prependTo('.l-main');
         }
     })
+    if(current.indexOf('/teencouncil/') == -1){
+        $('.navigation.dashboard').addClass('active');
+        $('.navigation.dashboard .nav-caption').addClass('active').prependTo('.l-main');
+    }
   })
   
   // Wrapping data in statistics

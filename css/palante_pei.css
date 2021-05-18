@@ -118,6 +118,9 @@ button.button-primary,
 input.button-primary:hover, input.button-primary:focus, button.button-primary:hover, button.button-primary:focus {
   color: #282A29;
 }
+body:not(.logged-in) .l-main .container.justify-end {
+  justify-content: flex-start;
+}
 
 /*************************** Top Bar *******************************/
 .layout--ptc-app-ui-left .l-header {
@@ -269,8 +272,9 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   -o-transform-origin: 0px 0px;
   transform-origin: 0px 0px;
 	top: 2em;
-  background: #4fb646;
-  color: #282A29;
+  background-color: #282a29;
+  border-bottom: 1px solid #4fb646;
+  color: #ffffff;
   border-radius: 5px 5px 0 0;
   padding: 0 5px;
   font-weight: 900;
@@ -494,18 +498,25 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
   padding: 0!important;
 }
 .icon-expand {
+  background-color: #5d5d5d;
   background-image: url('../images/expand.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-origin: content-box;
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: 2rem;
+  height: 2rem;
   margin-left: .5rem;
   color: #282A29;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
+  border-radius: 0 14px 0 7px;
+  padding: 7px;
+  transition: 1s filter linear, 1s -webkit-filter linear;
+}
+.icon-expand:hover {
+  filter: brightness(50%);
 }
 .ui-accordion .ui-accordion-content {
   padding: 0;
