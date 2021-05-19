@@ -814,6 +814,9 @@ form:not(#user-login-form) input.form-text {
 .user-login-block ul a {
   font-size: .8em;
 }
+div.messages.status:before {
+  background-color: #4fb646;
+}
 
 /* CiviCRM */
 .crm-footer {
