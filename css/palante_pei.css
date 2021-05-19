@@ -738,7 +738,7 @@ fieldset#edit-filters .fieldset-wrapper {
   max-width: 100%;
 }
 .select2-container-multi .select2-choices,
-.form-item input[type='text'] {
+form:not(#user-login-form) .form-item input[type='text'] {
   background-image: none;
   border-radius: 0;
   border: solid 1px #d7d8d7;
@@ -775,7 +775,7 @@ fieldset#edit-more-filters-retreat-end-date .fieldset-legend {
 .form-type-select .select2-container.select2-container-multi {
   width: 100%!important;
 }
-input.form-text {
+form:not(#user-login-form) input.form-text {
   width: 100%;
 }
 .fieldset-wrapper  .form-type-date {
@@ -799,6 +799,23 @@ input.form-text {
 }
 
 /*************************** Misc Overrides *******************************/
+.user-login-block {
+  transform: perspective(1px) translateY(0%);
+}
+.password-toggle {
+  position: relative;
+  top: inherit;
+  display: block;
+}
+.user-login-block ul {
+  margin: 0;
+  padding: 0;
+}
+.user-login-block ul a {
+  font-size: .8em;
+}
+
+/* CiviCRM */
 .crm-footer {
   display: none;
 }
