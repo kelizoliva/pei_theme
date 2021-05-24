@@ -26,7 +26,7 @@ Backdrop.behaviors.base = {
         self.location.href = $(this).attr("href");
         return false;
       });
-      
+
     });
   }
 };
@@ -35,27 +35,27 @@ $(window).on('load', function (e) {
   $('.block-system-user-menu .menu-tree').wrap( '<div class="welcome top-padding-10 bottom-padding-10">Welcome <span class="caret"></span></div>' );
   $('.summary .ui-accordion-content').addClass('container');
   $('.summary .views-view-accordion').addClass('col-12');
-  $('.block-views-educators-recent-activity-view-added-by-educator-block .dropbutton-wrapper .first a').addClass('crm-popup');
+  $('.block-views-educators-recent-activity-view-added-by-educator-block .dropbutton-wrapper .first a').addClass('crm-popup');3
   $('#crm-main-content-wrapper').addClass('container gutters');
   $('.crm-summary-contactname-block').addClass('col-12 col-xs-10');
   $('.crm-actions-ribbon').addClass('col-12 col-xs-2');
   $('.crm-content-block').addClass('col-12');
   
   // Expanded Activities Add Classes
-  $('.view-expanded-views-activities .fieldset-wrapper').not('.view-expanded-views-activities #edit-filters-date .fieldset-wrapper').not('.view-expanded-views-activities #edit-more-filters-retreat-end-date .fieldset-wrapper').addClass('container gutters content-end items-end');
-  $('.view-expanded-views-activities #edit-filters-date .fieldset-wrapper, .view-expanded-views-activities #edit-more-filters-retreat-end-date .fieldset-wrapper, .view-expanded-views-activities #edit-more-filters-retreat-end-date .fieldset-wrapper').addClass('container content-end items-end');
-  $('.view-expanded-views-activities .fieldset-wrapper #edit-manage-columns-columns').addClass('container gutters content-end items-end');
-  $('.view-expanded-views-activities .sliderfield').addClass('container gutters content-end items-end');  
-  $('.view-expanded-views-activities .sliderfield-container').addClass('col-12');
-  $('.view-expanded-views-activities .sliderfield-event-field-container').addClass('col-12 col-xs-6 col-md-4');
-  $('.view-expanded-views-activities .form-item').not('.view-expanded-views-activities fieldset#edit-filters-date .form-item').not('.view-expanded-views-activities fieldset#edit-more-filters-retreat-end-date .form-item').addClass('col-12 col-xs-6 col-md-4');
-  $('.view-expanded-views-activities fieldset#edit-filters-date').addClass('col-12 col-sm-8');
-  $('.view-expanded-views-activities fieldset#edit-more-filters-retreat-end-date').addClass('col-12 col-sm-8');
-  $('.view-expanded-views-activities fieldset#edit-filters-date .form-item').addClass('col-12 col-xs-6');
-  $('.view-expanded-views-activities fieldset#edit-more-filters-retreat-end-date .form-item').addClass('col-12 col-xs-6');
+  // $('.view-expanded-views-activities .fieldset-wrapper').not('.view-expanded-views-activities #edit-filters-date .fieldset-wrapper').not('.view-expanded-views-activities #edit-more-filters-retreat-end-date .fieldset-wrapper').addClass('container gutters content-end items-end');
+  // $('.view-expanded-views-activities #edit-filters-date .fieldset-wrapper, .view-expanded-views-activities #edit-more-filters-retreat-end-date .fieldset-wrapper, .view-expanded-views-activities #edit-more-filters-retreat-end-date .fieldset-wrapper').addClass('container content-end items-end');
+  // $('.view-expanded-views-activities .fieldset-wrapper #edit-manage-columns-columns').addClass('container gutters content-end items-end');
+  // $('.view-expanded-views-activities .sliderfield').addClass('container gutters content-end items-end');
+  // $('.view-expanded-views-activities .sliderfield-container').addClass('col-12');
+  // $('.view-expanded-views-activities .sliderfield-event-field-container').addClass('col-12 col-xs-6 col-md-4');
+  // $('.view-expanded-views-activities .form-item').not('.view-expanded-views-activities fieldset#edit-filters-date .form-item').not('.view-expanded-views-activities fieldset#edit-more-filters-retreat-end-date .form-item').addClass('col-12 col-xs-6 col-md-4');
+  // $('.view-expanded-views-activities fieldset#edit-filters-date').addClass('col-12 col-sm-8');
+  // $('.view-expanded-views-activities fieldset#edit-more-filters-retreat-end-date').addClass('col-12 col-sm-8');
+  // $('.view-expanded-views-activities fieldset#edit-filters-date .form-item').addClass('col-12 col-xs-6');
+  // $('.view-expanded-views-activities fieldset#edit-more-filters-retreat-end-date .form-item').addClass('col-12 col-xs-6');
   // Expanded activities element changes
-  $('#pei-activities-form #edit-apply, #pei-activities-form #edit-reset, #pei-activities-form #edit-export').wrapAll('<div class="form-action-buttons"></div>');
-  
+  // $('#pei-activities-form #edit-apply, #pei-activities-form #edit-reset, #pei-activities-form #edit-export').wrapAll('<div class="form-action-buttons"></div>');
+
   // Navigation Captions
   $(function(){
     var current = location.pathname;
@@ -72,17 +72,17 @@ $(window).on('load', function (e) {
     //    $('.navigation.dashboard .nav-caption').addClass('active').prependTo('.l-main');
     //}
   })
-  
+
   // Wrapping data in statistics
   var rex = new RegExp("([0-9]+\.?[0-9]+)", "gm");
-  
+
   $(".aggregate-activity .views-field-expression-1 span").each(function(){
       $(this).wrap('<div>');
       var $this = $(this);
       var content = $this.html();
       $this.html(content.replace(rex, "<span>$1</span>"));
   });
-      
+
 });
 
 (function ($) {
@@ -100,6 +100,6 @@ $(window).on('load', function (e) {
       $('.ui-dialog.crm-container form .crm-section').first().addClass('col-12');
     });
   });
-  
+
 })(CRM.$);
 
