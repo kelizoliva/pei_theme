@@ -5,6 +5,6 @@ base theme = palante_base
 
 stylesheets[all][] = css/palante_pei.css
 stylesheets[all][] = css/typography_pei.css
-stylesheets[all][] = css/fonts_pei.css
+
 
 scripts[] = js/palante_pei.js

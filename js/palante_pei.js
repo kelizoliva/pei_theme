@@ -36,6 +36,10 @@ $(window).on('load', function (e) {
   $('.summary .ui-accordion-content').addClass('container');
   $('.summary .views-view-accordion').addClass('col-12');
   $('.block-views-educators-recent-activity-view-added-by-educator-block .dropbutton-wrapper .first a').addClass('crm-popup');
+  $('#crm-main-content-wrapper').addClass('container gutters');
+  $('.crm-summary-contactname-block').addClass('col-12 col-xs-10');
+  $('.crm-actions-ribbon').addClass('col-12 col-xs-2');
+  $('.crm-content-block').addClass('col-12');
   
   // Expanded Activities Add Classes
   $('.view-expanded-views-activities .fieldset-wrapper').not('.view-expanded-views-activities #edit-filters-date .fieldset-wrapper').not('.view-expanded-views-activities #edit-more-filters-retreat-end-date .fieldset-wrapper').addClass('container gutters content-end items-end');
@@ -92,7 +96,8 @@ $(window).on('load', function (e) {
     }
     $( document ).ajaxComplete(function() {
       $('.ui-dialog.crm-container form').addClass('container gutters');
-      $('.ui-dialog.crm-container form .crm-section').addClass('col-6');
+      $('.ui-dialog.crm-container form .crm-section').slice(1).addClass('col-6');
+      $('.ui-dialog.crm-container form .crm-section').first().addClass('col-12');
     });
   });
   
