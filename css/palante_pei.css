@@ -670,7 +670,7 @@ body:not(.logged-in) .l-main .container.justify-end {
 
 /*************************** Expanded Views *******************************/
 
-.view-expanded-views-activities table.views-table {
+.expanded table.views-table {
   font-size: 125%;
   margin: 0;
   border: none;
@@ -680,12 +680,12 @@ body:not(.logged-in) .l-main .container.justify-end {
   border: solid #f9f9f9 1px;
   position: relative;
 }
-.view-expanded-views-activities table.views-table td,
-.view-expanded-views-activities table.views-table th {
+.expanded table.views-table td,
+.expanded table.views-table th {
   border: solid #f9f9f9 1px;
   padding: 0.5rem 1rem;
 }
-.view-expanded-views-activities table.views-table thead th {
+.expanded table.views-table thead th {
   position: -webkit-sticky; /* for Safari */
   position: sticky;
   background: #f9f9f9;
@@ -694,30 +694,37 @@ body:not(.logged-in) .l-main .container.justify-end {
   padding: 3px;
   width: 25vw;
 }
-.view-expanded-views-activities table.views-table td {
+.expanded table.views-table td {
   background: #fff;
   padding: 4px 5px;
   text-align: center;
 }
-.view-expanded-views-activities table.views-table tbody th {
+.expanded table.views-table tbody th {
   font-weight: 100;
   font-style: italic;
   text-align: left;
   position: relative;
 }
-.view-expanded-views-activities table.views-table thead th:first-child {
+.expanded table.views-table thead th:first-child {
   position: sticky;
   left: 0;
   z-index: 2;
 }
-.view-expanded-views-activities table.views-table tbody td.views-field-display-name-1 {
+.view-expanded-views-activities table.views-table tbody td.views-field-display-name-1  {
   position: -webkit-sticky; /* for Safari */
   position: sticky;
   left: 0;
   background: #f9f9f9;
   z-index: 1;
 }
-.view-expanded-views-activities .view-content {
+.view-expanded-views-contacts table.views-table tbody td.views-field-display-name {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  left: 0;
+  background: #f9f9f9;
+  z-index: 1;
+}
+.expanded .view-content {
   width: 92vw;
   max-width: 100%;
   max-height: 85vh;

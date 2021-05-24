@@ -259,6 +259,7 @@ function pei_activities_form_sliderfield_element_sliderfield_structure($element,
       '#disabled'    => $element['#disabled'],
       '#size'             => $element['#size'],
       '#attributes'       => array('class' => array('sliderfield-value2-field')),
+      '#wrapper_attributes' => array('class' => array('hide')),
     );
   }
 
@@ -423,3 +424,136 @@ function pei_activities_form_process_checkboxes($element) {
   }
   return $element;
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds grid classes, theme overrides, and processors to form elements.
+ * Some classes can be added directly to form elements, but the rest need theme overrides and custom processors.
+ */
+function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
+
+  $filter_wrapper_class = 'col-12 col-xs-6 col-md-4';
+  $slider_class = 'col-12';
+
+  $form['#attributes']['class'][] = 'container';
+
+  $form['filters']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+
+  $form['filters']['teen_councils']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['teen_council_states']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['first_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['last_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['more_filters']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+
+  $form['more_filters']['attendance_rate']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['attendance_rate']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['attendance_rate']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['preferred_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['race']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['additional_race']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['gender']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['additional_gender']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['sexual_orientation']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['additional_sexual_orientation']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['sex_assigned_at_birth']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['more_filters']['dob']['#name'] = 'dob';
+  $form['more_filters']['dob']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+  $form['more_filters']['dob']['from']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['dob']['to']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['more_filters']['age']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['age']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['age']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['grade_level']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['grade_level']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['grade_level']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['income_proxy']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['more_filters']['enrollment_date']['#name'] = 'dob';
+  $form['more_filters']['enrollment_date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+  $form['more_filters']['enrollment_date']['from']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['enrollment_date']['to']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['more_filters']['withdrawal_date']['#name'] = 'dob';
+  $form['more_filters']['withdrawal_date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+  $form['more_filters']['withdrawal_date']['from']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['withdrawal_date']['to']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['more_filters']['reason_for_withdrawal']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['other_reason_for_withdrawal']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['member_email_address']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['member_phone_number']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['member_text_ok']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['member_ok_for_pei_to_contact']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['release_forms_received']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['more_filters']['retreats_member_attendance']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['retreats_member_attendance']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['retreats_member_attendance']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['retreats_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['retreats_total_hours']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['retreats_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['trainings_total']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['trainings_total']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['trainings_total']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['trainings_attendance']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['trainings_attendance']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['trainings_attendance']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['trainings_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['trainings_total_hours']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['trainings_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['presentations_total']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['presentations_total']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['presentations_total']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['presentations_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['presentations_total_hours']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['presentations_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['informal_education_conversations']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['informal_education_conversations']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['informal_education_conversations']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['informal_education_people_reached']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['informal_education_people_reached']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['informal_education_people_reached']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['informal_education_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['informal_education_total_hours']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['informal_education_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['special_events_total_events']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['special_events_total_events']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['special_events_total_events']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['special_events_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['special_events_total_hours']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['special_events_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['total_hours']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['teen_council_is_active']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['manage_columns']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+
+  $form['manage_columns']['columns']['#attributes']['class'][] = 'container gutters content-end items-end';
+  $form['manage_columns']['columns']['#process'] = array('pei_activities_form_process_checkboxes');
+  $form['manage_columns']['display_results_as']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['manage_columns']['show']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['action_buttons']['#attributes']['class'][] = 'form-action-buttons';
+}
+
