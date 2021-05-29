@@ -525,6 +525,13 @@ body:not(.logged-in) .l-main .container.justify-end {
 .icon-expand:hover {
   filter: brightness(50%);
 }
+.dashlet a.ui-icon {
+  margin-left: 1em;
+  transition: 1s all linear;
+}
+.dashlet a.ui-icon:hover {
+  color: #4fb646;
+}
 .ui-accordion .ui-accordion-content {
   padding: 0;
   padding-top: 1em;
@@ -588,12 +595,13 @@ body:not(.logged-in) .l-main .container.justify-end {
 }
 .summary .data {
   font-weight: 900;
-  }
+}
 .summary .views-field-activity-type h3 {
   border-bottom: solid #d7d8d7 1px;
   margin-bottom: 1em;
   margin-top: .5em;
 }
+.civicrm .aggregate-activity .general .views-field-hours-43 .field-content,
 .summary .general .views-field-hours-43 .field-content,
 .summary .general .views-field-nothing .field-content {
   background: #4fb646;
@@ -637,18 +645,37 @@ body:not(.logged-in) .l-main .container.justify-end {
   }
 }
 
+/** teen councils **/
+.summary .actions.drop {
+  display: block;
+}
+.summary .actions.drop::before {
+  content: "";
+  display: inline-block;
+  background: url('../images/elipses.svg') no-repeat;
+  background-size: contain;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1rem;
+}
+.summary .actions.drop ul {
+  display: none;
+}
+
 /** recent activities **/
 .block-views-educators-recent-activity-view-added-by-educator-block .views-row, .block-views-program-administrators-top-and-bottom-teen-councils-block .view .view .views-row  {
   width: 100%;
 }
 .recent-activities .views-row {
-  margin-bottom: 1em;
-  padding-bottom: 1em;
   border-bottom: 1px solid #e2e5e5;
 }
 .recent-activities .views-row a {
   text-decoration: none;
-  font-weight: 900;
+}
+.recent-activities .views-row p {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 700;
 }
 .recent-activities .dropbutton .dropbutton-action > * {
   padding: 2px;
@@ -668,10 +695,16 @@ body:not(.logged-in) .l-main .container.justify-end {
   border-width: 0.25em 0.25em 0;
 }
 
+/*************************** Civi Screen Views *******************************/
+.civicrm .dashlet h3 {
+  padding: 1em 0;
+  font-family: 'd-dinregular', sans-serif;
+}
+
 /*************************** Expanded Views *******************************/
 
 .expanded table.views-table {
-  font-size: 125%;
+  font-size: 110%;
   margin: 0;
   border: none;
   border-collapse: separate;
@@ -692,7 +725,7 @@ body:not(.logged-in) .l-main .container.justify-end {
   top: 0;
   z-index: 1;
   padding: 3px;
-  width: 25vw;
+  width: 20vw;
 }
 .expanded table.views-table td {
   background: #fff;
@@ -710,14 +743,14 @@ body:not(.logged-in) .l-main .container.justify-end {
   left: 0;
   z-index: 2;
 }
-.view-expanded-views-activities table.views-table tbody td.views-field-display-name-1  {
+.expanded table.views-table tbody td.views-field-display-name-1  {
   position: -webkit-sticky; /* for Safari */
   position: sticky;
   left: 0;
   background: #f9f9f9;
   z-index: 1;
 }
-.view-expanded-views-contacts table.views-table tbody td.views-field-display-name {
+.expanded table.views-table tbody td:first-child {
   position: -webkit-sticky; /* for Safari */
   position: sticky;
   left: 0;
@@ -725,15 +758,28 @@ body:not(.logged-in) .l-main .container.justify-end {
   z-index: 1;
 }
 .expanded .view-content {
-  width: 92vw;
+  width: 75vw;
   max-width: 100%;
   max-height: 85vh;
   overflow: scroll;
   position: relative;
   left: 0;
 }
+@media (min-width: 30em) {
+  .expanded .view-content {
+    width: 85vw;
+    max-width: 100%;
+    max-height: 85vh;
+    overflow: scroll;
+    position: relative;
+    left: 0;
+  }
+}
 
 /* Form Elements */
+.form-item, .field-name-comment-body {
+  margin: 0 0 1em;
+}
 .form-action-buttons {
   float: right;
 }
@@ -748,22 +794,52 @@ fieldset#edit-filters {
 fieldset#edit-filters .fieldset-wrapper {
   margin: 0;
 }
+fieldset.form-wrapper {
+  margin: 0;
+  padding: 3em 0 0 0;
+}
+fieldset.form-wrapper .fieldset-legend {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 15px;
+}
+.js fieldset.collapsed {
+  padding: 2em 0 0 !important;
+}
 .select2-container {
   max-width: 100%;
 }
 .select2-container-multi .select2-choices,
-form:not(#user-login-form) .form-item input[type='text'] {
+form:not(#user-login-form) .form-item input[type='text'],
+.form-type-html-date input.form-date {
   background-image: none;
   border-radius: 0;
   border: solid 1px #d7d8d7;
   max-width: 100%;
+  font-size: 13px;
 }
-fieldset#edit-filters-date .fieldset-legend,
-fieldset#edit-more-filters-retreat-end-date .fieldset-legend {
+form:not(#user-login-form) .form-item .select2-container.select2-container-multi input[type='text'] {
+  border: none;
+  font-size: 13px;
+}
+fieldset[id^='edit-filters-date'] .fieldset-legend,
+fieldset[id^='edit-more-filters'] .fieldset-legend {
   position: relative;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+fieldset[id^='edit-filters-date'] .form-type-html-date,
+fieldset[id^='edit-more-filters'] .form-type-html-date {
+  margin-bottom: 0;
+}
+fieldset[id^='edit-filters-date'] .form-type-html-date label,
+fieldset[id^='edit-more-filters'] .form-type-html-date label {
+  font-weight: 100;
+  font-size: 13px;
 }
 .sliderfield-container {
   margin-top: 50px;
+  border: 1px solid #d7d8d7;
 }
 .sliderfield .sliderfield-bubble {
   border: none;
@@ -806,6 +882,20 @@ form:not(#user-login-form) input.form-text {
 .form-checkboxes .form-item:last-child {
   margin: 0 0 1.5em
 }
+input.form-autocomplete, 
+input.form-text, 
+input.form-tel, 
+input.form-date, 
+input.form-time, 
+input.form-email, 
+input.form-url, 
+input.form-color, 
+input.form-number, 
+input.form-search, 
+input.form-file, 
+textarea.form-textarea {
+  color: #2a2a2a;
+}
 
 /*************************** Pager *******************************/
 .pager-first, .pager-previous, .pager-next, .pager-last {
@@ -843,6 +933,15 @@ div.messages.status:before {
 }
 
 /* CiviCRM General Overrides */
+.ui-icon {
+  width: 20px;
+}
+.crm-container div.crm-clear {
+  font-size: 13px;
+}
+.crm-container form {
+  margin: 0;
+}
 .crm-footer,
 #crm-container #access {
   display: none;
@@ -851,8 +950,11 @@ div.messages.status:before {
   border-color: #4fb646;
 }
 .ac_results-inner, .crm-participant-list-inner, .crm-event-links-list-inner, .crm-contribpage-links-list-inner, .crm-contact-actions-list-inner {
-  margin-top: 17px;
+  margin-top: 32px;
+  background-color: #282a29;
+  border-radius: 2px;
 }
+
 .ac_results {
   background: none;
 }
@@ -868,28 +970,52 @@ div.messages.status:before {
 .ui-tabs-anchor .crm-i {
   display: none;
 }
-@media (min-width: 480px) {
-  .crm-actions-ribbon ul {
-    float: right;
-  }
-}
-#crm-contact-actions-wrapper a {
-  color: #282A29;
-}
-#crm-contact-actions-wrapper .crm-contact-actions-list-inner a {
-  color: #ffffff;
-}
-#crm-contact-actions-wrapper .crm-contact-actions-list-inner a:hover {
-  color: #282A29;
-}
-.crm-container #actions a.button {
+#crm-container div.crm-summary-row,
+.crm-container div.crm-clear {
   background: transparent;
+  border-bottom: 1px solid #FAFAFA;
+}
+#crm-contact-actions-wrapper .crm-contact-actions-list-inner .crm-contact_activities-list li {
+  border-radius: 2px;
+}
+#crm-contact-actions-wrapper .crm-contact-actions-list-inner .crm-contact_activities-list a:hover {
+  color: #282a29;
 }
 
 /* CiviCRM Buttons */
 .crm-container .btn-secondary, .crm-container #actions #crm-submit-buttons button.crm-form-submit, .crm-container #crm-submit-buttons #actions button.crm-form-submit, .crm-container #actions button.crm-button.crm-form-submit, .crm-container #actions .crm-hover-button, .crm-container #actions .ui-dialog-buttonset .ui-button, .crm-container .ui-dialog-buttonset #actions .ui-button, .crm-container #actions input[type=button], .crm-container #crm-main-content-wrapper div.action-link #crm-submit-buttons button.crm-form-submit, .crm-container #crm-submit-buttons #crm-main-content-wrapper div.action-link button.crm-form-submit, .crm-container #crm-main-content-wrapper div.action-link button.crm-button.crm-form-submit, .crm-container #crm-main-content-wrapper div.action-link .crm-hover-button, .crm-container #crm-main-content-wrapper div.action-link .ui-dialog-buttonset .ui-button, .crm-container .ui-dialog-buttonset #crm-main-content-wrapper div.action-link .ui-button, .crm-container #crm-main-content-wrapper div.action-link a.button, .crm-container #crm-main-content-wrapper div.action-link input[type=button], .crm-container .btn-primary, .crm-container .ui-dialog .ui-dialog-content .button:not(.hr-job-info-close), .crm-container #crm-submit-buttons button.crm-form-submit:not(.cancel), .crm-container button.crm-form-submit.crm-button:not(.cancel), .crm-container .crm-form-submit.crm-hover-button:not(.cancel), .crm-container .ui-dialog-buttonset .crm-form-submit.ui-button:not(.cancel), .crm-container a.crm-form-submit.button:not(.cancel), .crm-container input.crm-form-submit:not(.cancel)[type=button], .crm-container *:not(.crm-submit-buttons)>div.crm-button:not([class*='crm-button-type-']), .crm-container *:not(.crm-submit-buttons)>button.crm-button:not([class*='crm-button-type-']), .page-civicrm-group .crm-submit-buttons a.newGroup.button, .page-civicrm-admin #crm-main-content-wrapper .crm-submit-buttons a.button, .page-civicrm-a #crm-main-content-wrapper .crm-submit-buttons a.button, .page-civicrm-a.page-civicrm-a .crmCaseType .crm-button[crm-icon=fa-check], .crm-container.ui-dialog .ui-dialog-content .button:not(.hr-job-info-close), body[class*='page-civicrm-report-'] #report-tab-order-by-elements #optionFieldLink>.form-link, .crm-container #discount [name='_qf_Fee_submit'], .crm-container #contact-summary-relationship-tab.view-content div.action-link>a.button {
   background: #4fb646;
 }
+#crm-container .crm-actions-ribbon li.crm-delete-action,
+#crm-container .crm-actions-ribbon li.crm-contact-activity {
+  margin-left: 0;
+  margin-right: 5px;
+  margin-top: 8px;
+}
+@media (min-width: 75em) {
+  .crm-actions-ribbon ul {
+    float: right;
+  }
+}
+#crm-contact-actions-wrapper a, .crm-container #actions a.button {
+  color: #282A29;
+}
+#crm-contact-actions-wrapper .crm-contact-actions-list-inner a {
+  color: #ffffff;
+}
+#crm-contact-actions-wrapper .crm-contact-actions-list-inner a.button:hover {
+  color: #282A29;
+  background-color: #4fb646;
+}
+.crm-container #actions a.button {
+  background: transparent;
+}
+.crm-container #actions a.button:hover,
+.crm-container #actions a.button:focus,
+.crm-container #actions a.button:active {
+  background-color: #4fb646;
+}
+
 
 /* CiviCRM Tables and Forms */
 #crm-container table.crm-inline-edit-form td, #crm-container div.crm-inline-edit-form {
