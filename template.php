@@ -9,7 +9,8 @@
 function pei_theme_form_pei_activities_form_alter(&$form, &$form_state) {
 
   $filter_wrapper_class = 'col-12 col-xs-6 col-md-4';
-  $slider_class = 'col-12';
+  $slider_class = 'col-11';
+  $date_class = 'col-11 col-xs-6';
 
   $form['#attributes']['class'][] = 'container';
 
@@ -22,8 +23,8 @@ function pei_theme_form_pei_activities_form_alter(&$form, &$form_state) {
 
   $form['filters']['date']['#name'] = 'date';
   $form['filters']['date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
-  $form['filters']['date']['from']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['filters']['date']['to']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['date']['from']['#wrapper_attributes']['class'][] = $date_class;
+  $form['filters']['date']['to']['#wrapper_attributes']['class'][] = $date_class;
 
   $form['more_filters']['#theme_wrappers'] = array('pei_activities_form_fieldset');
 
@@ -61,8 +62,8 @@ function pei_theme_form_pei_activities_form_alter(&$form, &$form_state) {
   if(isset($form['more_filters']['retreat_end_date'])) {
     $form['more_filters']['retreat_end_date']['#name'] = 'retreat_end_date';
     $form['more_filters']['retreat_end_date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
-    $form['more_filters']['retreat_end_date']['from']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-    $form['more_filters']['retreat_end_date']['to']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    $form['more_filters']['retreat_end_date']['from']['#wrapper_attributes']['class'][] = $date_class;
+    $form['more_filters']['retreat_end_date']['to']['#wrapper_attributes']['class'][] = $date_class;
   }
   $form['more_filters']['pei_lesson_use']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   if(isset($form['more_filters']['presentation_informal_education_topic'])) {
@@ -94,12 +95,9 @@ function pei_theme_pei_activities_form_fieldset($variables) {
 //  dpm($element['#name']);
   element_set_attributes($element, array('id'));
 
-  $classes = array('form-wrapper');
+  $classes = array('form-wrapper col-12 col-xs-6 col-md-4');
 
-  // Add custom grid classes to fieldset.
-  if(strpos($element['#name'], 'date') !== false) {
-    $classes[] = 'col-12 col-sm-8';
-  }
+
 
   _form_set_class($element, $classes);
 
@@ -434,7 +432,8 @@ function pei_activities_form_process_checkboxes($element) {
 function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
 
   $filter_wrapper_class = 'col-12 col-xs-6 col-md-4';
-  $slider_class = 'col-12';
+  $slider_class = 'col-11';
+  $date_class = 'col-11 col-xs-6';
 
   $form['#attributes']['class'][] = 'container';
 
@@ -452,6 +451,7 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
   $form['more_filters']['attendance_rate']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
 
   $form['more_filters']['preferred_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['pronouns']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['race']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['additional_race']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['gender']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
@@ -462,8 +462,8 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
 
   $form['more_filters']['dob']['#name'] = 'dob';
   $form['more_filters']['dob']['#theme_wrappers'] = array('pei_activities_form_fieldset');
-  $form['more_filters']['dob']['from']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['dob']['to']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['dob']['from']['#wrapper_attributes']['class'][] = $date_class;
+  $form['more_filters']['dob']['to']['#wrapper_attributes']['class'][] = $date_class;
 
   $form['more_filters']['age']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['age']['#attributes']['class'][] = $slider_class;
@@ -477,13 +477,13 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
 
   $form['more_filters']['enrollment_date']['#name'] = 'dob';
   $form['more_filters']['enrollment_date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
-  $form['more_filters']['enrollment_date']['from']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['enrollment_date']['to']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['enrollment_date']['from']['#wrapper_attributes']['class'][] = $date_class;
+  $form['more_filters']['enrollment_date']['to']['#wrapper_attributes']['class'][] = $date_class;
 
   $form['more_filters']['withdrawal_date']['#name'] = 'dob';
   $form['more_filters']['withdrawal_date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
-  $form['more_filters']['withdrawal_date']['from']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['withdrawal_date']['to']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['withdrawal_date']['from']['#wrapper_attributes']['class'][] = $date_class;
+  $form['more_filters']['withdrawal_date']['to']['#wrapper_attributes']['class'][] = $date_class;
 
   $form['more_filters']['reason_for_withdrawal']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['other_reason_for_withdrawal']['#wrapper_attributes']['class'][] = $filter_wrapper_class;

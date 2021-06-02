@@ -818,9 +818,18 @@ form:not(#user-login-form) .form-item input[type='text'],
   max-width: 100%;
   font-size: 13px;
 }
+.select2-container-multi .select2-choices .select2-search-field input {
+  padding: 0.625em;
+  margin: 0;
+}
+.select2-container-multi .select2-choices .select2-search-field {
+  width: 100%;
+}
 form:not(#user-login-form) .form-item .select2-container.select2-container-multi input[type='text'] {
   border: none;
   font-size: 13px;
+  color: #8c8d8c!important;
+  font-weight: 100;
 }
 fieldset[id^='edit-filters-date'] .fieldset-legend,
 fieldset[id^='edit-more-filters'] .fieldset-legend {
@@ -838,7 +847,7 @@ fieldset[id^='edit-more-filters'] .form-type-html-date label {
   font-size: 13px;
 }
 .sliderfield-container {
-  margin-top: 50px;
+  margin-top: 20px;
   border: 1px solid #d7d8d7;
 }
 .sliderfield .sliderfield-bubble {
