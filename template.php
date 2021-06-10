@@ -493,60 +493,6 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
   $form['more_filters']['member_ok_for_pei_to_contact']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['release_forms_received']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
 
-  $form['more_filters']['retreats_member_attendance']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['retreats_member_attendance']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['retreats_member_attendance']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['retreats_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['retreats_total_hours']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['retreats_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['trainings_total']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['trainings_total']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['trainings_total']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['trainings_attendance']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['trainings_attendance']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['trainings_attendance']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['trainings_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['trainings_total_hours']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['trainings_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['presentations_total']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['presentations_total']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['presentations_total']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['presentations_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['presentations_total_hours']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['presentations_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['informal_education_conversations']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['informal_education_conversations']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['informal_education_conversations']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['informal_education_people_reached']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['informal_education_people_reached']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['informal_education_people_reached']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['informal_education_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['informal_education_total_hours']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['informal_education_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['special_events_total_events']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['special_events_total_events']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['special_events_total_events']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['special_events_total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['special_events_total_hours']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['special_events_total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['total_hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['total_hours']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['total_hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['teen_council_is_active']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-
   $form['manage_columns']['#theme_wrappers'] = array('pei_activities_form_fieldset');
 
   $form['manage_columns']['columns']['#attributes']['class'][] = 'container gutters content-end items-end';
