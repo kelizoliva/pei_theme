@@ -719,7 +719,7 @@ body:not(.logged-in) .l-main .container.justify-end {
   padding: 0.5rem 1rem;
 }
 .expanded table.views-table thead th {
-  position: -webkit-sticky; /* for Safari */
+  position: -webkit-sticky;
   position: sticky;
   background: #f9f9f9;
   top: 0;
@@ -744,14 +744,14 @@ body:not(.logged-in) .l-main .container.justify-end {
   z-index: 2;
 }
 .expanded table.views-table tbody td.views-field-display-name-1  {
-  position: -webkit-sticky; /* for Safari */
+  position: -webkit-sticky;
   position: sticky;
   left: 0;
   background: #f9f9f9;
   z-index: 1;
 }
 .expanded table.views-table tbody td:first-child {
-  position: -webkit-sticky; /* for Safari */
+  position: -webkit-sticky;
   position: sticky;
   left: 0;
   background: #f9f9f9;
@@ -776,13 +776,113 @@ body:not(.logged-in) .l-main .container.justify-end {
   }
 }
 
-/* Form Elements */
-.form-item, .field-name-comment-body {
-  margin: 0 0 1em;
+/*************************** Form Elements ***************************/
+.fieldset-wrapper:not(#edit-manage-columns) > div:not(.fieldset-wrapper) .form-item, .field-name-comment-body {
+  margin: 1em 0 1em;
 }
 .form-action-buttons {
   float: right;
 }
+
+/* general fields */
+
+/* +++ Placeholders are somewhat tricky, so the following ensures we get what we want, cross-browser +++ */
+input.form-autocomplete::-webkit-input-placeholder, 
+input.form-text::-webkit-input-placeholder, 
+input.form-tel::-webkit-input-placeholder, 
+input.form-date::-webkit-input-placeholder, 
+input.form-time::-webkit-input-placeholder, 
+input.form-email::-webkit-input-placeholder, 
+input.form-url::-webkit-input-placeholder, 
+input.form-color::-webkit-input-placeholder, 
+input.form-number::-webkit-input-placeholder, 
+input.form-search::-webkit-input-placeholder, 
+input.form-file::-webkit-input-placeholder, 
+textarea.form-textarea::-webkit-input-placeholder,
+input.form-autocomplete:-moz-placeholder, 
+input.form-text:-moz-placeholder, 
+input.form-tel:-moz-placeholder, 
+input.form-date:-moz-placeholder, 
+input.form-time:-moz-placeholder, 
+input.form-email:-moz-placeholder, 
+input.form-url:-moz-placeholder, 
+input.form-color:-moz-placeholder, 
+input.form-number:-moz-placeholder, 
+input.form-search:-moz-placeholder, 
+input.form-file:-moz-placeholder, 
+textarea.form-textarea:-moz-placeholder,
+input.form-autocomplete::-moz-placeholder, 
+input.form-text::-moz-placeholder, 
+input.form-tel::-moz-placeholder, 
+input.form-date::-moz-placeholder, 
+input.form-time::-moz-placeholder, 
+input.form-email::-moz-placeholder, 
+input.form-url::-moz-placeholder, 
+input.form-color::-moz-placeholder, 
+input.form-number::-moz-placeholder, 
+input.form-search::-moz-placeholder, 
+input.form-file::-moz-placeholder, 
+textarea.form-textarea::-moz-placeholder,
+input.form-autocomplete:-ms-input-placeholder, 
+input.form-text:-ms-input-placeholder, 
+input.form-tel:-ms-input-placeholder, 
+input.form-date:-ms-input-placeholder, 
+input.form-time:-ms-input-placeholder, 
+input.form-email:-ms-input-placeholder, 
+input.form-url:-ms-input-placeholder, 
+input.form-color:-ms-input-placeholder, 
+input.form-number:-ms-input-placeholder, 
+input.form-search:-ms-input-placeholder, 
+input.form-file:-ms-input-placeholder, 
+textarea.form-textarea:-ms-input-placeholder,
+input.form-autocomplete::placeholder, 
+input.form-text::placeholder, 
+input.form-tel::placeholder, 
+input.form-date::placeholder, 
+input.form-time::placeholder, 
+input.form-email::placeholder, 
+input.form-url::placeholder, 
+input.form-color::placeholder, 
+input.form-number::placeholder, 
+input.form-search::placeholder, 
+input.form-file::placeholder, 
+textarea.form-textarea::placeholder {
+  color: #2a2a2a;
+  opacity:  1;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #2a2a2a;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #2a2a2a;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #2a2a2a;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #2a2a2a;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #2a2a2a;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color: #2a2a2a;
+}
+/* +++ end placeholder css +++ */
+.form-item input[type='text'], input.form-autocomplete, input.form-text, input.form-tel, input.form-date, input.form-time, input.form-email, input.form-url, input.form-color, input.form-number, input.form-search, input.form-file, textarea.form-textarea {
+  color: #2a2a2a;
+}
+input.form-text:focus, input.form-tel:focus, input.form-date:focus, input.form-time:focus, input.form-email:focus, input.form-url:focus, input.form-color:focus, input.form-number:focus, input.form-search:focus, input.form-file:focus, textarea.form-textarea:focus {
+  color: #2a2a2a;
+}
+input, optgroup, select {
+  line-height: 2;
+}
+
+/* fieldset general */
 .js fieldset#edit-more-filters,
 .js fieldset#edit-manage-columns {
   border-bottom: 1px solid #d7d8d7;
@@ -794,6 +894,12 @@ fieldset#edit-filters {
 fieldset#edit-filters .fieldset-wrapper {
   margin: 0;
 }
+fieldset[id^='edit-filters'] .fieldset-wrapper .fieldset-wrapper,
+fieldset[id^='more-filters'] .fieldset-wrapper .fieldset-wrapper {
+  background: #f9f9f9;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 1em;
+}
 fieldset.form-wrapper {
   margin: 0;
   padding: 3em 0 0 0;
@@ -803,34 +909,77 @@ fieldset.form-wrapper .fieldset-legend {
   padding-bottom: 0;
   font-size: 15px;
 }
+fieldset.form-wrapper#edit-filters > legend .fieldset-legend {
+  font-weight: 900;
+  font-size: 1.25rem;
+  margin-top: 1em;
+  margin-left: .75em;
+}
 .js fieldset.collapsed {
   padding: 2em 0 0 !important;
 }
+legend {
+  background: #f9f9f9;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+/* select fields */
 .select2-container {
   max-width: 100%;
 }
 .select2-container-multi .select2-choices,
-form:not(#user-login-form) .form-item input[type='text'],
-.form-type-html-date input.form-date {
+form:not(#user-login-form) .form-item input[type='text'] {
   background-image: none;
   border-radius: 0;
-  border: solid 1px #d7d8d7;
+  border: none;
+  border-bottom: solid 1px #d7d8d7;
   max-width: 100%;
   font-size: 13px;
+  cursor: pointer;
 }
 .select2-container-multi .select2-choices .select2-search-field input {
-  padding: 0.625em;
+  padding: .625em;
   margin: 0;
-}
-.select2-container-multi .select2-choices .select2-search-field {
-  width: 100%;
 }
 form:not(#user-login-form) .form-item .select2-container.select2-container-multi input[type='text'] {
   border: none;
   font-size: 13px;
-  color: #8c8d8c!important;
-  font-weight: 100;
+  color: #2a2a2a!important;
+  font-weight: 400;
 }
+.use-select-2.form-select {
+  max-width: 100%;
+  width: 100%
+}
+.form-type-select .select2-container.select2-container-multi,
+.form-type-select .select2-container {
+  width: unset!important;
+}
+.form-type-select .select2-container.select2-container-multi {
+  width: 100%!important;
+}
+.select2-container-multi .select2-choices .select2-search-choice {
+  position: relative;
+}
+.select2-container-multi .select2-choices:after{
+  content: "\25BE";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: .5rem;
+  position: absolute;
+  top: 25%;
+  right: 0;
+  font-size: 1rem;
+}
+.ajax-progress {
+  position: absolute;
+  left: 0;
+  background: #ffffff;
+}
+
+/* date fields */
 fieldset[id^='edit-filters-date'] .fieldset-legend,
 fieldset[id^='edit-more-filters'] .fieldset-legend {
   position: relative;
@@ -846,9 +995,27 @@ fieldset[id^='edit-more-filters'] .form-type-html-date label {
   font-weight: 100;
   font-size: 13px;
 }
+.fieldset-wrapper  .form-type-date {
+  margin-bottom: 0;
+}
+.form-type-html-date input.form-date {
+  background-image: none;
+  border-radius: 0;
+  border: none;
+  max-width: 100%;
+  font-size: 13px;
+}
+
+/* slider fields */
+.ui-slider-horizontal .ui-slider-handle {
+  margin-left: 0;
+}
 .sliderfield-container {
   margin-top: 20px;
   border: 1px solid #d7d8d7;
+}
+.sliderfield-container .ui-slider-handle:nth-child(3) {
+  margin-left: -1.7em;
 }
 .sliderfield .sliderfield-bubble {
   border: none;
@@ -863,26 +1030,16 @@ fieldset[id^='edit-more-filters'] .form-type-html-date label {
 .sliderfield .form-item-more-filters-conversations-value2  {
   display: none;
 }
-.use-select-2.form-select {
-  max-width: 100%;
-  width: 100%
-}
-.form-type-select .select2-container.select2-container-multi,
-.form-type-select .select2-container {
-  width: unset!important;
-}
-.form-type-select .select2-container.select2-container-multi {
-  width: 100%!important;
-}
+
+/* text fields */
 form:not(#user-login-form) input.form-text {
   width: 100%;
-}
-.fieldset-wrapper  .form-type-date {
-  margin-bottom: 0;
 }
 .form-item.form-type-checkbox {
   white-space: inherit;
 }
+
+/* checkbox fields */
 .form-item.form-type-checkbox label {
   display: inline-flex;
   position: absolute;
@@ -890,20 +1047,6 @@ form:not(#user-login-form) input.form-text {
 }
 .form-checkboxes .form-item:last-child {
   margin: 0 0 1.5em
-}
-input.form-autocomplete, 
-input.form-text, 
-input.form-tel, 
-input.form-date, 
-input.form-time, 
-input.form-email, 
-input.form-url, 
-input.form-color, 
-input.form-number, 
-input.form-search, 
-input.form-file, 
-textarea.form-textarea {
-  color: #2a2a2a;
 }
 
 /*************************** Pager *******************************/
