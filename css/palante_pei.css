@@ -450,9 +450,13 @@ body:not(.logged-in) .l-main .container.justify-end {
   right: 0;
   top: 0;
   height: 100%;
+  font-size: 1.5rem;
+}
+.crm-container .ui-dialog-titlebar .ui-button {
+  background-color: #4fb646;
 }
 .crm-container .ui-dialog-titlebar .ui-button:hover {
-  background-color: #4fb646;
+  background-color: #262828;
 }
 .crm-container .ui-dialog-titlebar.ui-widget-header,
 .crm-container .ui-dialog-titlebar.ui-widget-header,
@@ -531,7 +535,7 @@ body:not(.logged-in) .l-main .container.justify-end {
   padding: 0!important;
 }
 .icon-expand {
-  background-color: #5d5d5d;
+  background-color: #efefef;
   background-image: url('../images/expand.svg');
   background-repeat: no-repeat;
   background-size: contain;
@@ -551,9 +555,13 @@ body:not(.logged-in) .l-main .container.justify-end {
 .icon-expand:hover {
   filter: brightness(50%);
 }
+.views-view-accordion .ui-state-active a.ui-icon, 
+.views-view-accordion .ui-state-active a.ui-icon:link,
 .dashlet a.ui-icon {
   margin-left: 1em;
   transition: 1s all linear;
+  font-weight: normal;
+  color: #555;
 }
 .dashlet a.ui-icon:hover {
   color: #4fb646;
@@ -691,6 +699,9 @@ body:not(.logged-in) .l-main .container.justify-end {
 /** recent activities **/
 .block-views-educators-recent-activity-view-added-by-educator-block .views-row, .block-views-program-administrators-top-and-bottom-teen-councils-block .view .view .views-row  {
   width: 100%;
+}
+.recent-activities .view-content {
+  font-size: .90rem;
 }
 .recent-activities .views-row {
   border-bottom: 1px solid #e2e5e5;
