@@ -296,15 +296,16 @@ body:not(.logged-in) .l-main .container.justify-end {
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: #272929;
+  background-color: #4fb646;
   padding: 10px;
-  min-width: 50px;
-  min-height: 50px;
+  min-width: 55px;
+  min-height: 55px;
   border-radius: 65px 0 0 0;
   z-index: 100;
 }
 .modal.open {
-  border-radius: 40px 0 0 0;
+  border-radius: 20px 0 0 0;
+  background-color: #272929;
 }
 .modal .toggle {
   position: absolute;
@@ -314,7 +315,6 @@ body:not(.logged-in) .l-main .container.justify-end {
   top: 14px;
   cursor: pointer;
   z-index: 101;
-  background-image: url('../images/add.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-origin: content-box;
@@ -325,10 +325,32 @@ body:not(.logged-in) .l-main .container.justify-end {
   -o-transition: 1s -o-filter linear;
   transition: 1s filter linear, 1s -webkit-filter linear;
 }
+.modal .toggle:after {
+  content: 'Add';
+  font-size: .85rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #272929;
+  font-weight: 900;
+  position: relative;
+  top: 45%;
+  right: -10%;
+}
+.modal .toggle:before {
+  content: '\002B';
+  color: #272929;
+  display: block;
+  position: relative;
+  top: 20%;
+  right: -25%;
+  font-size: 2rem;
+  line-height: 0;
+}
 .modal .toggle:hover {
-  filter: brightness(50%);
+  filter: opacity(75%);
 }
 .modal.open .toggle {
+  background-image: url('../images/add.svg');
   width: 20px;
   height: 20px;
   left: unset;
@@ -339,6 +361,10 @@ body:not(.logged-in) .l-main .container.justify-end {
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+.modal.open .toggle:after,
+.modal.open .toggle:before {
+  display: none;
 }
 .modal.open .block-pei-menu-pei-add-links {
   display: block;
