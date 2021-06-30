@@ -482,7 +482,7 @@ body:not(.logged-in) .l-main .container.justify-end {
 #crm-container .help, .crm-container #help, .crm-container .help {
   background-color: #ffffff;
   border: none;
-  box-shadow: 1px 2px 11px rgba(0, 0, 0, 0.3)!important;
+  box-shadow: none!important;
   color: #282A29;
   padding: 10px;
   border-radius: 0;
@@ -568,10 +568,6 @@ body:not(.logged-in) .l-main .container.justify-end {
 }
 
 /** statistics **/
-.aggregate-activity .views-field-activity-type {
-  font-size: 20px;
-  font-weight: 900;
-}
 .aggregate-activity .views-row .views-row {
   margin-bottom: 1em;
   background: #f0f0f0;
@@ -579,8 +575,18 @@ body:not(.logged-in) .l-main .container.justify-end {
   border-radius: 5px;
   margin-bottom: .5em;
 }
-.aggregate-activity h3 {
+.aggregate-activity h3,
+.civicrm .dashlet .aggregate-activity :not(.view-header) h3 {
   padding: 0;
+}
+.aggregate-activity h3,
+.civicrm .dashlet .aggregate-activity h3 {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: 'd-din_expdinexp-bold', sans-serif;
+}
+.civicrm .dashlet .aggregate-activity .view-header h3 {
+  color: #2a2a2a;
 }
 .aggregate-activity .column-clear {
   background: #ffffff;
@@ -615,10 +621,10 @@ body:not(.logged-in) .l-main .container.justify-end {
 
 /** members **/
 .summary .actions {
-  margin-left: 2em;
-  float: right;
+  margin-left: 0;
 }
-.summary .data {
+.summary .data,
+.civicrm .aggregate-activity .data {
   font-weight: 900;
 }
 .summary .views-field-activity-type h3 {
@@ -654,21 +660,33 @@ body:not(.logged-in) .l-main .container.justify-end {
   border: none;
   background: transparent;
 }
+.ui-accordion .ui-widget-content.ui-accordion-content-active {
+  opacity: 1;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
 .ui-accordion .ui-accordion-content > .views-field:not(:first-child) {
   background: #f0f0f0;
   border: .25em solid #f9f9f9;
   border-radius: 10px;
   padding: .5em;
 }
-.ui-accordion .ui-accordion-content > .views-field:first-child {
+.ui-accordion .ui-accordion-content > .views-field:first-child,
+.civicrm .aggregate-activity .views-field-view .views-row-1 {
   background: #4fb646;
-  border: .25em solid #f9f9f9;
-  border-radius: 10px;
   padding: .5em;
   font-size: 1.25rem;
 }
-
-
+.ui-accordion .ui-accordion-content > .views-field:first-child {
+  border: .25em solid #f9f9f9;
+  border-radius: 10px;
+}
+@media (min-width: 350px) {
+  .summary .actions {
+    margin-left: 1em;
+    float: right;
+  }
+}
 @media (min-width: 480px) {
   .summary .container > .col-xs-6.column-clear {
     max-width: 100%;
