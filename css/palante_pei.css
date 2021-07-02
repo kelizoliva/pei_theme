@@ -125,6 +125,30 @@ th {
   background: #f8f9f8;
 }
 
+/* Buttons */
+.button, 
+input.form-submit, 
+input.button-primary, 
+button.button-primary, 
+.ui-state-default, 
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default {
+  background: #4fb646;
+  cursor: pointer;
+}
+.crm-container a.button, .crm-container a.button:link, .crm-container a.button:visited, .crm-container .ui-dialog-buttonset .ui-button, .crm-container .crm-button {
+  background: #4fb646;
+  padding: 1em;
+  border-radius: 0;
+  border: 0;
+  text-shadow: none;
+}
+.crm-container .crm-button:hover, .crm-container .crm-button:focus, .crm-container .ui-dialog-buttonset .ui-button:hover, .crm-container .ui-dialog-buttonset .ui-button:focus, .crm-container a.button:hover, .crm-container a.button:focus {
+  color: #ffffff;
+  background: #272929;
+}
+
+
 /*************************** Top Bar *******************************/
 .layout--ptc-app-ui-left .l-header {
   color: #282A29;
@@ -305,11 +329,20 @@ th {
   min-height: 55px;
   border-radius: 65px 0 0 0;
   z-index: 100;
+  -webkit-transition: 1s -webkit-filter linear;
+  -moz-transition: 1s -moz-filter linear;
+  -moz-transition: 1s filter linear;
+  -ms-transition: 1s -ms-filter linear;
+  -o-transition: 1s -o-filter linear;
+  transition: 1s filter linear, 1s -webkit-filter linear;
+}
+.modal:not(.open):hover {
+  filter: brightness(90%);
 }
 .modal.open {
   border-radius: 20px 0 0 0;
   background-color: #272929;
-}
+  }
 .modal .toggle {
   position: absolute;
   right: 0;
@@ -349,8 +382,11 @@ th {
   font-size: 2rem;
   line-height: 0;
 }
-.modal .toggle:hover {
+.modal:not(.open) .toggle:hover {
   filter: opacity(75%);
+}
+.modal.open, .modal:hover .toggle:after, .modal.open, .modal:hover .toggle:before {
+  color: #ffffff;
 }
 .modal.open .toggle {
   background-image: url('../images/add.svg');
@@ -471,17 +507,7 @@ th {
 .crm-container .crm-dialog-titlebar-print, .crm-container .crm-dialog-titlebar-resize {
   display: none;
 }
-.crm-container a.button, .crm-container a.button:link, .crm-container a.button:visited, .crm-container .ui-dialog-buttonset .ui-button, .crm-container .crm-button {
-  background: #4fb646;
-  padding: 1em;
-  border-radius: 0;
-  border: 0;
-  text-shadow: none;
-}
-.crm-container .crm-button:hover, .crm-container .crm-button:focus, .crm-container .ui-dialog-buttonset .ui-button:hover, .crm-container .ui-dialog-buttonset .ui-button:focus, .crm-container a.button:hover, .crm-container a.button:focus {
-  color: #ffffff;
-  background: #272929;
-}
+
 /* fields */
 .ui-dialog.crm-container form .crm-section input#title {
   width: 100%;
@@ -1194,6 +1220,23 @@ div.messages.status:before {
   background-color: #4fb646;
 }
 
+/* my account screen */
+article.profile .form-item .crm-container .crm-section .label {
+  text-align: left;
+  font-weight: 900;
+  
+}
+article.profile > .form-item:not(:first-child) {
+  background: #f9f9f9;
+  border-radius: 15px;
+  border: 10px solid #ffffff;
+  padding: 16px!important;
+}
+article.profile > .form-item > label {
+  font-size: 1.25rem;
+  margin-bottom: 1em;
+  display: block;
+}
 /* layout overrides */
 .layout--ptc-app-ui-left .ptc-main {
   overflow: clip;

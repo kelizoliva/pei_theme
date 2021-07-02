@@ -45,6 +45,11 @@ $(window).on('load', function (e) {
   $('.civicrm .view-member-statistics .views-row').addClass('container gutters');
   $('.civicrm .view-member-statistics .views-row .views-field-activity-type').addClass('col-12');
   
+  // Backdrop User Page overrides
+  $('article.profile').addClass('container gutters col-12');
+  $('article.profile .form-item').first().addClass('col-12');
+  $('article.profile .form-item').slice(1).addClass('col-12 col-xs-6 col-md-4');
+  
   // Navigation Captions
   $(function(){
     var current = location.pathname;
