@@ -85,7 +85,7 @@ $(window).on('load', function (e) {
     }
     $( document ).ajaxComplete(function() {
       $('.ui-dialog.crm-container form').addClass('container gutters');
-      $('.ui-dialog.crm-container form .crm-section').slice(1).addClass('col-6');
+      $('.ui-dialog.crm-container form .crm-section').slice(1).addClass('col-12 col-xs-6');
       $('.ui-dialog.crm-container form .crm-section').first().addClass('col-12');
     });
   });

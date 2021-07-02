@@ -121,6 +121,9 @@ input.button-primary:hover, input.button-primary:focus, button.button-primary:ho
 body:not(.logged-in) .l-main .container.justify-end {
   justify-content: flex-start;
 }
+th {
+  background: #f8f9f8;
+}
 
 /*************************** Top Bar *******************************/
 .layout--ptc-app-ui-left .l-header {
@@ -479,6 +482,10 @@ body:not(.logged-in) .l-main .container.justify-end {
   color: #ffffff;
   background: #272929;
 }
+/* fields */
+.ui-dialog.crm-container form .crm-section input#title {
+  width: 100%;
+}
 #crm-container .help, .crm-container #help, .crm-container .help {
   background-color: #ffffff;
   border: none;
@@ -489,10 +496,26 @@ body:not(.logged-in) .l-main .container.justify-end {
   border-left: 3px solid #4fb646;
   margin: 2em;
 }
+.ui-dialog.crm-container .help {
+  margin: 1em 0;
+}
 .ui-dialog.crm-container .crm-section .label {
   float: none;
   width: auto;
   text-align: left;
+}
+.ui-widget.ui-widget-content.ui-datepicker {
+  border: 1px solid #282A29;
+}
+.ui-widget.ui-widget-content .ui-datepicker-header {
+  background: #fff;
+}
+.ui-widget-content .ui-datepicker-calendar .ui-state-default, .ui-widget-header .ui-datepicker-calendar .ui-state-default {
+  background: #f8f9f8;
+  color: #282A29;
+} 
+.ui-widget-content .ui-datepicker-calendar .ui-state-default.ui-state-active, .ui-widget-content .ui-datepicker-calendar .ui-state-default:hover {
+  background: #4fb646;
 }
 .ui-dialog.crm-container .crm-section .content {
   margin-left: 0;
@@ -1005,8 +1028,7 @@ legend {
 .select2-container {
   max-width: 100%;
 }
-.select2-container-multi .select2-choices,
-form:not(#user-login-form) .form-item input[type='text'] {
+.select2-container-multi:not(.crm-select2):not(.crm-form-entityref) .select2-choices, form:not(#user-login-form) .form-item input[type='text'] {
   background-image: none;
   border-radius: 0;
   border: none;
@@ -1039,6 +1061,12 @@ form:not(#user-login-form) .form-item .select2-container.select2-container-multi
 .select2-container-multi .select2-choices .select2-search-choice {
   position: relative;
 }
+.select2-container .select2-choice {
+  background-image: none;
+  filter: none;
+  border-radius: 0;
+  border: solid #d7d8d7 1px;
+}
 .select2-container-multi .select2-choices:after{
   content: "\25BE";
   display: inline-block;
@@ -1050,6 +1078,19 @@ form:not(#user-login-form) .form-item .select2-container.select2-container-multi
   right: 0;
   font-size: 1rem;
 }
+.select2-container .select2-choice .select2-arrow {
+  background: none;
+  filter: none;
+  border-left: none;
+  border-radius: 0;
+}
+.crm-container .select2-container-multi .select2-choices:before {
+   display: none;
+}
+select {
+  border: solid #d7d8d7 1px;
+}
+/* this shows on certain select fields that load dynamically via ajax */
 .ajax-progress {
   position: absolute;
   left: 0;
@@ -1163,7 +1204,7 @@ div.messages.status:before {
 
 /* CiviCRM General Overrides */
 .ui-icon {
-  width: 20px;
+  width: 16px;
 }
 .crm-container div.crm-clear {
   font-size: 13px;
@@ -1183,7 +1224,6 @@ div.messages.status:before {
   background-color: #282a29;
   border-radius: 2px;
 }
-
 .ac_results {
   background: none;
 }
@@ -1209,6 +1249,9 @@ div.messages.status:before {
 }
 #crm-contact-actions-wrapper .crm-contact-actions-list-inner .crm-contact_activities-list a:hover {
   color: #282a29;
+}
+.crm-container .crm-form-block {
+  background-color: transparent;
 }
 
 /* CiviCRM Buttons */
@@ -1247,8 +1290,49 @@ div.messages.status:before {
 
 
 /* CiviCRM Tables and Forms */
+.crm-container .crm-form-block table {
+  width: 100%;
+  table-layout: fixed;
+}
 #crm-container table.crm-inline-edit-form td, #crm-container div.crm-inline-edit-form {
   background-color: transparent;
+}
+.select2-container-multi.crm-form-entityref .select2-choices, .select2-container-multi.crm-select2 .select2-choices, .crm-container input.crm-form-text, .crm-container .crm-icon-picker-button, .crm-container input.dateplugin, .crm-container input.crm-form-password {
+  background-image: none;
+  border: solid #d7d8d7 1px;
+  border-radius: 0;
+  max-width: 100%;
+}
+.crm-container table {
+  font-size: .85rem;
+}
+.crm-container th, .crm-container table.display thead th, .crm-container table thead.sticky th, .crm-container table.caseSelector tr.columnheader th {
+  font-size: 1.25em;
+  color: #282A29;
+}
+.crm-container table.display thead th {
+  border-bottom: solid #d7d8d7 1px;
+}
+.crm-container .replace-plain, .crm-container textarea, .crm-container select.crm-form-multiselect {
+  max-width: 100%;
+  border: solid #d7d8d7 1px;
+}
+.crm-container input.crm-form-text[disabled], .crm-container input.dateplugin[disabled], .crm-container select.crm-form-select[disabled], .crm-container input.crm-form-text[readonly], .crm-container input.crm-form-password[disabled], .crm-container input.crm-form-password[readonly] {
+  background-image: none;
+  background:  #eff0ef;
+  border: none;
+}
+.crm-container .crm-section .label label {
+  font-weight: 900;
+}
+.crm-container .form-layout td.label, .crm-container .form-layout-compressed td.label {
+  width: 8em;
+}
+.crm-container .form-layout td.label, .crm-container form table.report .label, .crm-container form table label, .crm-container form table.report label {
+  color: #282A29;
+}
+.crm-container .crm-accordion-header, .crm-container .crm-accordion-header:hover {
+  background-color: #272929;
 }
 
 /* CiviCRM Misc */
