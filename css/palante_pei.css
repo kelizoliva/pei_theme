@@ -1349,6 +1349,9 @@ article.profile > .form-item > label {
 .crm-container table {
   font-size: .85rem;
 }
+.ui-dialog  table {
+  font-size: 1.2rem;
+}
 .crm-container th, .crm-container table.display thead th, .crm-container table thead.sticky th, .crm-container table.caseSelector tr.columnheader th {
   font-size: 1.25em;
   color: #282A29;
@@ -1376,6 +1379,31 @@ article.profile > .form-item > label {
 }
 .crm-container .crm-accordion-header, .crm-container .crm-accordion-header:hover {
   background-color: #272929;
+}
+#activity-header span:last-child {
+  font-size: 14px;
+  color: #464747;
+  float: right;
+}
+.ui-dialog .inline-edit-form .crm-content div {
+  min-width: 40%;
+  min-height: 2.5em;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid #e2e5e5;
+}
+.ui-dialog td {
+  border: none;
+}
+.ui-dialog td.crm-label {
+  max-width: 50%;
+  width: 10em;
+  vertical-align: bottom;
+}
+.ui-dialog td #activity_date_time-input {
+  width: 10em;
+  float: left;
+  margin-right: .5em;
 }
 
 /* CiviCRM Misc */
