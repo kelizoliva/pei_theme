@@ -94,6 +94,13 @@ $(window).on('load', function (e) {
       $('.ui-dialog.crm-container form .crm-section').first().addClass('col-12');
     });
   });
+  $(document).on('dialogclose', function(e) {
+    $( document ).ajaxComplete(function() {
+      setTimeout(function(){// wait for 5 secs(2)
+        location.reload(); // then reload the page.(3)
+      }, 2000); 
+    });
+  });
 
 })(CRM.$);
 
