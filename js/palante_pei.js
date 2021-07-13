@@ -94,6 +94,7 @@ $(window).on('load', function (e) {
       $('.ui-dialog.crm-container form .crm-section').first().addClass('col-12');
     });
   });
+  // CiviCRM Reload parent after dialog form submit
   $(document).on('dialogclose', function(e) {
     $( document ).ajaxComplete(function() {
       setTimeout(function(){// wait for 5 secs(2)
