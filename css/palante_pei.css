@@ -643,6 +643,7 @@ button.button-primary,
   margin-right: 1%;
   margin-top: .5em;
   line-height: 1.2;
+  padding: 6px!important;
 }
 .aggregate-activity .column-clear .data {
   font-size: 22px;
@@ -652,6 +653,7 @@ button.button-primary,
   color: #4fb646;
   text-transform: uppercase;
   font-size: 12px;
+  display: block;
 }
 .aggregate-activity .container.gutters > .views-field-activity-type.col-12 {
   padding: 0;
@@ -1220,6 +1222,27 @@ div.messages.status:before {
   background-color: #4fb646;
 }
 
+/* Help Page Accordion */
+.ckeditor-accordion-container > dl {
+  border: 1px solid #4fb646;
+}
+.ckeditor-accordion-container > dl dt > a {
+  background-color: #f0f0f0;
+  color: #282a29;
+  border-bottom: 1px solid #4fb646;
+}
+.ckeditor-accordion-container > dl dt.active > a {
+  background-color: #f9f9f9;
+  color: #282a29;
+  border-bottom: solid 1px #4fb646;
+}
+.ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:before, .ckeditor-accordion-container > dl dt > .ckeditor-accordion-toggle:after {
+  background: #282a29;
+}
+.ckeditor-accordion-container > dl dt > a:hover {
+  background-color: #4fb646;
+}
+
 /* my account screen */
 article.profile .form-item .crm-container .crm-section .label {
   text-align: left;
@@ -1247,7 +1270,7 @@ article.profile > .form-item > label {
 
 /* CiviCRM General Overrides */
 .ui-icon {
-  width: 16px;
+  width: 20px;
 }
 .crm-container div.crm-clear {
   font-size: 13px;
