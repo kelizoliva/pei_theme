@@ -284,6 +284,10 @@ ul.action-links {
   padding-left: 3em;
   text-indent: -2em;
 }
+#search-bar-results .contact-result.inactive a {
+  color: #808080;
+  font-style: italic;
+}
 
 /*************************** Side Bar *******************************/
 @media (min-width: 768px) {
