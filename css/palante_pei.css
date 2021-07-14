@@ -1319,9 +1319,18 @@ article.profile > .form-item > label {
 .crm-container .crm-form-block {
   background-color: transparent;
 }
+.crm-ajax-container #permission-legend {
+  display: none;
+}
 
 /* CiviCRM Buttons */
 .crm-container .btn-secondary, .crm-container #actions #crm-submit-buttons button.crm-form-submit, .crm-container #crm-submit-buttons #actions button.crm-form-submit, .crm-container #actions button.crm-button.crm-form-submit, .crm-container #actions .crm-hover-button, .crm-container #actions .ui-dialog-buttonset .ui-button, .crm-container .ui-dialog-buttonset #actions .ui-button, .crm-container #actions input[type=button], .crm-container #crm-main-content-wrapper div.action-link #crm-submit-buttons button.crm-form-submit, .crm-container #crm-submit-buttons #crm-main-content-wrapper div.action-link button.crm-form-submit, .crm-container #crm-main-content-wrapper div.action-link button.crm-button.crm-form-submit, .crm-container #crm-main-content-wrapper div.action-link .crm-hover-button, .crm-container #crm-main-content-wrapper div.action-link .ui-dialog-buttonset .ui-button, .crm-container .ui-dialog-buttonset #crm-main-content-wrapper div.action-link .ui-button, .crm-container #crm-main-content-wrapper div.action-link a.button, .crm-container #crm-main-content-wrapper div.action-link input[type=button], .crm-container .btn-primary, .crm-container .ui-dialog .ui-dialog-content .button:not(.hr-job-info-close), .crm-container #crm-submit-buttons button.crm-form-submit:not(.cancel), .crm-container button.crm-form-submit.crm-button:not(.cancel), .crm-container .crm-form-submit.crm-hover-button:not(.cancel), .crm-container .ui-dialog-buttonset .crm-form-submit.ui-button:not(.cancel), .crm-container a.crm-form-submit.button:not(.cancel), .crm-container input.crm-form-submit:not(.cancel)[type=button], .crm-container *:not(.crm-submit-buttons)>div.crm-button:not([class*='crm-button-type-']), .crm-container *:not(.crm-submit-buttons)>button.crm-button:not([class*='crm-button-type-']), .page-civicrm-group .crm-submit-buttons a.newGroup.button, .page-civicrm-admin #crm-main-content-wrapper .crm-submit-buttons a.button, .page-civicrm-a #crm-main-content-wrapper .crm-submit-buttons a.button, .page-civicrm-a.page-civicrm-a .crmCaseType .crm-button[crm-icon=fa-check], .crm-container.ui-dialog .ui-dialog-content .button:not(.hr-job-info-close), body[class*='page-civicrm-report-'] #report-tab-order-by-elements #optionFieldLink>.form-link, .crm-container #discount [name='_qf_Fee_submit'], .crm-container #contact-summary-relationship-tab.view-content div.action-link>a.button {
+  background: #4fb646;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  border: none;
+  color: #ffffff!important;
+  background-color: #4fb646;
   background: #4fb646;
 }
 #crm-container .crm-actions-ribbon li.crm-delete-action,
@@ -1353,7 +1362,9 @@ article.profile > .form-item > label {
 .crm-container #actions a.button:active {
   background-color: #4fb646;
 }
-
+.crm-container .crm-submit-buttons, .crm-container .action-link {
+  height: 60px; 
+}
 
 /* CiviCRM Tables and Forms */
 .crm-container .crm-form-block table {
@@ -1428,6 +1439,18 @@ article.profile > .form-item > label {
   float: left;
   margin-right: .5em;
 }
+table.dataTable.no-footer.crm-contact-relationship-selector-current, table.dataTable.no-footer.crm-contact-relationship-selector-past {
+  border-bottom: none;
+}
+.crm-contact-relationship-selector-current td, .crm-contact-relationship-selector-past td {
+  border: none;
+}
+.crm-contact-relationship-selector-current thead th:last-child, .crm-contact-relationship-selector-past thead th:last-child {
+  border-color: transparent;
+}
+.fa-stack {
+  display: none;
+}
 
 /* CiviCRM Misc */
 .crm-container .ui-tabs .ui-tabs-nav .ui-corner-all, .crm-container .ui-tabs .ui-tabs-nav .ui-corner-top {
@@ -1435,6 +1458,7 @@ article.profile > .form-item > label {
   font-size: 13px;
   margin-bottom: -1px;
   padding: 7px 15px;
+  margin-right: 0;
 }
 .crm-container .ui-tabs .ui-tabs-nav .ui-corner-all a, .crm-container .ui-tabs .ui-tabs-nav .ui-corner-top a {
   display: block;
