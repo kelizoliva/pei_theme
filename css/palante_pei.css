@@ -136,19 +136,37 @@ button.button-primary,
   background: #4fb646;
   cursor: pointer;
 }
-.crm-container a.button, .crm-container a.button:link, .crm-container a.button:visited, .crm-container .ui-dialog-buttonset .ui-button, .crm-container .crm-button {
+.crm-container a.button, .crm-container a.button:link, .crm-container a.button:visited, .crm-container .ui-dialog-buttonset .ui-button, .crm-container .crm-button, .view-name-user_admin .action-links a {
   background: #4fb646;
   padding: 1em;
   border-radius: 0;
   border: 0;
   text-shadow: none;
+  color: #ffffff;
+  text-decoration: none;
 }
-.crm-container .crm-button:hover, .crm-container .crm-button:focus, .crm-container .ui-dialog-buttonset .ui-button:hover, .crm-container .ui-dialog-buttonset .ui-button:focus, .crm-container a.button:hover, .crm-container a.button:focus {
+.crm-container .crm-button:hover, .crm-container .crm-button:focus, .crm-container .ui-dialog-buttonset .ui-button:hover, .crm-container .ui-dialog-buttonset .ui-button:focus, .crm-container a.button:hover, .crm-container a.button:focus, .view-name-user_admin .action-links a:hover {
   color: #ffffff;
   background: #272929;
 }
-
-
+.view-name-user_admin .action-links a {
+  display: inline-block;
+  margin-top: 1em;
+}
+.view-name-user_admin ul.action-links a:before, .view-name-user_admin ul.action-links a:after {
+  background: #ffffff;
+}
+.view-name-user_admin ul.action-links a:before {
+  top: 1.5em;
+  left: .42em;
+}
+.view-name-user_admin ul.action-links a:after {
+  top: 1.75em;
+  left: .15em;
+}
+ul.action-links {
+  margin: 0;
+}
 /*************************** Top Bar *******************************/
 .layout--ptc-app-ui-left .l-header {
   color: #282A29;
@@ -1056,7 +1074,7 @@ legend {
 .select2-container {
   max-width: 100%;
 }
-.select2-container-multi:not(.crm-select2):not(.crm-form-entityref) .select2-choices, form:not(#user-login-form) .form-item input[type='text'] {
+.select2-container-multi:not(.crm-select2):not(.crm-form-entityref) .select2-choices, form:not(#user-login-form):not(#views-exposed-form-user-admin-page) .form-item input[type='text'] {
   background-image: none;
   border-radius: 0;
   border: none;
@@ -1221,6 +1239,19 @@ not(.user-register-form) .form-item.form-type-checkbox label {
 div.messages.status:before {
   background-color: #4fb646;
 }
+.view-user-admin tr.odd {
+  background-color: #f8f9f8;
+}
+.view-user-admin thead th {
+  border-right: 1px solid #f8f9f8;
+  border-top: 1px solid #f8f9f8;
+  background-color: transparent;
+}
+.view-user-admin thead th:last-child {
+  border-top: 1px solid #f8f9f8;
+  border-right: none;
+}
+
 
 /* Help Page Accordion */
 .ckeditor-accordion-container > dl {
@@ -1445,7 +1476,7 @@ article.profile > .form-item > label {
 table.dataTable.no-footer.crm-contact-relationship-selector-current, table.dataTable.no-footer.crm-contact-relationship-selector-past {
   border-bottom: none;
 }
-.crm-contact-relationship-selector-current td, .crm-contact-relationship-selector-past td {
+.crm-contact-relationship-selector-current td, .crm-contact-relationship-selector-past td, .view-user-admin td {
   border: none;
 }
 .crm-contact-relationship-selector-current thead th:last-child, .crm-contact-relationship-selector-past thead th:last-child {
