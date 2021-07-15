@@ -25,6 +25,9 @@ function pei_theme_form_pei_activities_form_alter(&$form, &$form_state) {
   $form['filters']['date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
   $form['filters']['date']['from']['#wrapper_attributes']['class'][] = $date_class;
   $form['filters']['date']['to']['#wrapper_attributes']['class'][] = $date_class;
+  
+  $form['filters']['school_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['audience_age']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
 
   $form['more_filters']['#theme_wrappers'] = array('pei_activities_form_fieldset');
 
@@ -32,13 +35,11 @@ function pei_theme_form_pei_activities_form_alter(&$form, &$form_state) {
   $form['more_filters']['hours']['#attributes']['class'][] = $slider_class;
   $form['more_filters']['hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
 
-  $form['more_filters']['school_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   if(isset($form['more_filters']['people_reached'])) {
     $form['more_filters']['people_reached']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
     $form['more_filters']['people_reached']['#attributes']['class'][] = $slider_class;
     $form['more_filters']['people_reached']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
   }
-  $form['more_filters']['audience_age']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   if(isset($form['more_filters']['conversations'])) {
     $form['more_filters']['conversations']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
     $form['more_filters']['conversations']['#attributes']['class'][] = $slider_class;
