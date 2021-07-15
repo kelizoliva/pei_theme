@@ -443,12 +443,16 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
   $form['filters']['teen_council_states']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['first_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['last_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  
+  $form['filters']['attendance_rate']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['attendance_rate']['#attributes']['class'][] = $slider_class;
+  $form['filters']['attendance_rate']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+  
+  $form['filters']['grade_level']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['grade_level']['#attributes']['class'][] = $slider_class;
+  $form['filters']['grade_level']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
 
   $form['more_filters']['#theme_wrappers'] = array('pei_activities_form_fieldset');
-
-  $form['more_filters']['attendance_rate']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['attendance_rate']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['attendance_rate']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
 
   $form['more_filters']['preferred_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['pronouns']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
@@ -468,10 +472,6 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
   $form['more_filters']['age']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['age']['#attributes']['class'][] = $slider_class;
   $form['more_filters']['age']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-
-  $form['more_filters']['grade_level']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['more_filters']['grade_level']['#attributes']['class'][] = $slider_class;
-  $form['more_filters']['grade_level']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
 
   $form['more_filters']['income_proxy']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
 
