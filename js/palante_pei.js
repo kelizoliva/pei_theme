@@ -97,11 +97,11 @@ $(window).on('load', function (e) {
     });
   });
   // CiviCRM Reload parent after dialog form submit
-  $(document).on('dialogclose', function(e) {
     $( document ).ajaxComplete(function(e) {
-      setTimeout(function(){// wait for 5 secs(2)
+      $( document ).on('dialogclose', function(e) {
+        setTimeout(function(){// wait for 5 secs(2)
         location.reload(); // then reload the page.(3)
-      }, 1000); 
+      }, 500); 
     });
   });
 
