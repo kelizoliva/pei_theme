@@ -7,7 +7,8 @@ h3 {
 	font-family: 'd-din_expdinexp-bold', sans-serif;
   font-size: 20px;
 }
-.ui-accordion .ui-accordion-content .views-field-activity-type h3 {
+.ui-accordion .ui-accordion-content .views-field-activity-type h3,
+.member-stats h3 {
   font-size: 15px;
 }
 .ui-accordion .ui-accordion-content {

@@ -40,16 +40,16 @@ $(window).on('load', function (e) {
   $('.crm-summary-contactname-block').addClass('col-12 col-sm-7 col-md-12 col-lg-7');
   $('.crm-actions-ribbon').addClass('col-12 col-sm-5 col-md-12 col-lg-5');
   $('.crm-content-block').addClass('col-12 col-lg-10');
-  
+
   // CiviCRM screen view overrides
-  $('.civicrm .view-member-statistics .views-row').addClass('container gutters');
-  $('.civicrm .view-member-statistics .views-row .views-field-activity-type').addClass('col-12');
-  
+  $('.civicrm .view-member-statistics .views-row, .civicrm .view-member-stats .views-row').addClass('container gutters');
+  $('.civicrm .view-member-statistics .views-row .views-field-activity-type, .civicrm .view-member-stats .views-row .views-field-activity-type').addClass('col-12');
+
   // Backdrop User Page overrides
   $('article.profile').addClass('container gutters col-12');
   $('article.profile .form-item').first().addClass('col-12');
   $('article.profile .form-item').slice(1).addClass('col-12 col-xs-6 col-md-4');
-  
+
   // Navigation Captions
   $(function(){
     var current = location.pathname;
@@ -101,7 +101,7 @@ $(window).on('load', function (e) {
       $( document ).on('dialogclose', function(e) {
         setTimeout(function(){// wait for 5 secs(2)
         location.reload(); // then reload the page.(3)
-      }, 500); 
+      }, 500);
     });
   });
 
