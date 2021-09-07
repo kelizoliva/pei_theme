@@ -16,6 +16,7 @@ function pei_theme_form_pei_activities_form_alter(&$form, &$form_state) {
 
   $form['filters']['#theme_wrappers'] = array('pei_activities_form_fieldset');
 
+  $form['filters']['activity_title']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['activity_type']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['teen_councils']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['teen_council_states']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
@@ -25,7 +26,7 @@ function pei_theme_form_pei_activities_form_alter(&$form, &$form_state) {
   $form['filters']['date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
   $form['filters']['date']['from']['#wrapper_attributes']['class'][] = $date_class;
   $form['filters']['date']['to']['#wrapper_attributes']['class'][] = $date_class;
-  
+
   $form['filters']['school_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['audience_age']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
 
@@ -444,11 +445,11 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
   $form['filters']['teen_council_states']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['first_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['last_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  
+
   $form['filters']['attendance_rate']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['attendance_rate']['#attributes']['class'][] = $slider_class;
   $form['filters']['attendance_rate']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
-  
+
   $form['filters']['grade_level']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['filters']['grade_level']['#attributes']['class'][] = $slider_class;
   $form['filters']['grade_level']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
