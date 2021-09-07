@@ -1579,3 +1579,8 @@ table.dataTable.no-footer.crm-contact-relationship-selector-current, table.dataT
 .crm-container .action-link a.button {
   box-shadow: none!important;
 }
+
+/* Hide grade level until it's fixed */
+.form-item-filters-grade-level {
+  display: none !important;
+}
