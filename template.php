@@ -75,6 +75,7 @@ function pei_theme_form_pei_activities_form_alter(&$form, &$form_state) {
     $form['more_filters']['other_presentation_informal_education_topic']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   }
   $form['more_filters']['attendance']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['tc_is_active']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
 
   $form['manage_columns']['#theme_wrappers'] = array('pei_activities_form_fieldset');
 
@@ -494,6 +495,7 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
   $form['more_filters']['member_text_ok']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['member_ok_for_pei_to_contact']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
   $form['more_filters']['release_forms_received']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['tc_is_active']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
 
   $form['manage_columns']['#theme_wrappers'] = array('pei_activities_form_fieldset');
 
