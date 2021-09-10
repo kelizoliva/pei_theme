@@ -189,11 +189,14 @@ ul.action-links {
     text-align: right;
   }
 }
-
+.block-system-user-menu {
+  background: #f0f0f0;
+}
 .welcome {
   display: inline-block;
   cursor: pointer;
   position: relative;
+  float: right;
 }
 .welcome:before {
   content: "";
@@ -243,6 +246,11 @@ ul.action-links {
 	}
 	.l-header .menu li:last-child a {
   	padding-bottom: 1.25rem;
+  }
+}
+@media (min-width: 480px) {
+  .block-system-user-menu {
+    background: transparent;
   }
 }
 
