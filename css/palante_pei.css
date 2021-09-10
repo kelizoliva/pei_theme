@@ -1096,6 +1096,12 @@ legend {
   font-size: 13px;
   cursor: pointer;
 }
+form:not(#user-login-form):not(#views-exposed-form-user-admin-page) .form-item ul.select2-choices input[type='text'] {
+  border-bottom: none;
+}
+form:not(#user-login-form):not(#views-exposed-form-user-admin-page) .form-item ul.select2-choices .select2-search-field {
+  width: 100%;
+}
 .select2-container-multi .select2-choices .select2-search-field input {
   padding: .625em;
   margin: 0;
