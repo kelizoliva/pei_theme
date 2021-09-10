@@ -1490,6 +1490,15 @@ table.dataTable.no-footer.crm-contact-relationship-selector-current, table.dataT
 .fa-stack {
   display: none;
 }
+.ui-dialog-content #attachments td.label {
+  width: 6em;
+}
+.ui-dialog-content #attachments td {
+  overflow: scroll;
+}
+.ui-dialog-content #attachments td input {
+  max-width: 100%;
+}
 
 /* CiviCRM Misc */
 .crm-container .ui-tabs .ui-tabs-nav .ui-corner-all, .crm-container .ui-tabs .ui-tabs-nav .ui-corner-top {
