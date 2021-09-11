@@ -863,7 +863,7 @@ ul.action-links {
 /*************************** Expanded Views *******************************/
 
 .expanded table.views-table {
-  font-size: 110%;
+  font-size: .8em;
   margin: 0;
   border: none;
   border-collapse: separate;
@@ -871,6 +871,7 @@ ul.action-links {
   table-layout: fixed;
   border: solid #f9f9f9 1px;
   position: relative;
+  text-align: left;
 }
 .expanded table.views-table td,
 .expanded table.views-table th {
@@ -889,7 +890,6 @@ ul.action-links {
 .expanded table.views-table td {
   background: #fff;
   padding: 4px 5px;
-  text-align: center;
 }
 .expanded table.views-table tbody th {
   font-weight: 100;
@@ -923,9 +923,13 @@ ul.action-links {
   overflow: scroll;
   position: relative;
   left: 0;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 @media (min-width: 30em) {
+  .expanded table.views-table {
+    font-size: 1.1em;
+    text-align: center;
+  }
   .expanded .view-content {
     width: 85vw;
     max-width: 100%;
