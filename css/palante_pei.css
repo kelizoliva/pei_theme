@@ -923,6 +923,7 @@ ul.action-links {
   overflow: scroll;
   position: relative;
   left: 0;
+  margin-bottom: 2em;
 }
 @media (min-width: 30em) {
   .expanded .view-content {
