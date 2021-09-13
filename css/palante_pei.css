@@ -1361,6 +1361,13 @@ article.profile > .form-item > label {
 .ui-icon {
   width: 20px;
 }
+#contact-summary .crm-inline-edit.form {
+  min-width: 0!important;
+  max-width: 100%;
+}
+.crm-container .crm-contact-summary-layout-col {
+  width: 100%;
+}
 .crm-container div.crm-clear {
   font-size: 13px;
 }
