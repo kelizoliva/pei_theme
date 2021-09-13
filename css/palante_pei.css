@@ -788,7 +788,7 @@ ul.action-links {
   padding: .5em;
 }
 .ui-accordion .ui-accordion-content > .views-field:first-child,
-.civicrm .aggregate-activity .views-field-view .views-row-1 {
+.civicrm .aggregate-activity:not(.view-educators-aggregate-activity-view-my-teen-council2) .views-field-view .views-row-1 {
   background: #4fb646;
   padding: .5em;
   font-size: 1.25rem;
