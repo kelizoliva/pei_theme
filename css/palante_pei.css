@@ -542,6 +542,12 @@ ul.action-links {
 .ui-dialog.crm-container form .crm-section input#title {
   width: 100%;
 }
+.ui-dialog.crm-container {
+  display: relative;
+}
+.ui-dialog.crm-container .content input {
+  display: inline-block;
+}
 #crm-container .help, .crm-container #help, .crm-container .help {
   background-color: #ffffff;
   border: none;
@@ -553,7 +559,35 @@ ul.action-links {
   margin: 2em;
 }
 .ui-dialog.crm-container .help {
+  border-left: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+  display: inline-block;
+}
+.ui-dialog.crm-container .help .hicon {
+  content: "\003F";
+  width: 1.2em;
+  height: 1.2em;
+  line-height: 15px;
+  padding: 0 5px;
+  font-weight: 900;
+  cursor: pointer;
+  background: #282A29;
+  border-radius: 20px;
+  color: #ffffff;
+}
+.ui-dialog.crm-container .help p {
   margin: 1em 0;
+  border-left: 3px solid #4fb646;
+  padding: 10px;
+  display: none;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 7px;
+  opacity: .9;
+  background: #ffffff;
 }
 .ui-dialog.crm-container .crm-section .label {
   float: none;

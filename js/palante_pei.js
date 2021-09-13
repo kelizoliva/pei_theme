@@ -26,7 +26,6 @@ Backdrop.behaviors.base = {
         self.location.href = $(this).attr("href");
         return false;
       });
-
     });
   }
 };
@@ -40,16 +39,16 @@ $(window).on('load', function (e) {
   $('.crm-summary-contactname-block').addClass('col-12 col-sm-7 col-md-12 col-lg-7');
   $('.crm-actions-ribbon').addClass('col-12 col-sm-5 col-md-12 col-lg-5');
   $('.crm-content-block').addClass('col-12 col-lg-10');
-
+  
   // CiviCRM screen view overrides
-  $('.civicrm .view-member-statistics .views-row, .civicrm .view-member-stats .views-row').addClass('container gutters');
-  $('.civicrm .view-member-statistics .views-row .views-field-activity-type, .civicrm .view-member-stats .views-row .views-field-activity-type').addClass('col-12');
-
+  $('.civicrm .view-member-statistics .views-row').addClass('container gutters');
+  $('.civicrm .view-member-statistics .views-row .views-field-activity-type').addClass('col-12');
+  
   // Backdrop User Page overrides
   $('article.profile').addClass('container gutters col-12');
   $('article.profile .form-item').first().addClass('col-12');
   $('article.profile .form-item').slice(1).addClass('col-12 col-xs-6 col-md-4');
-
+  
   // Navigation Captions
   $(function(){
     var current = location.pathname;
@@ -61,10 +60,6 @@ $(window).on('load', function (e) {
             $this.parents('.navigation').find('.nav-caption').addClass('active').prependTo('.l-main');
         }
     })
-    //if(current.indexOf('/teencouncil/') = -1){
-    //    $('.navigation.dashboard').addClass('active');
-    //    $('.navigation.dashboard .nav-caption').addClass('active').prependTo('.l-main');
-    //}
   })
 
   // Wrapping data in statistics
@@ -80,7 +75,7 @@ $(window).on('load', function (e) {
 });
 
 (function ($) {
-  // CiviCRM modal override auto-sizing
+  // CiviCRM modal overrides
   $(document).on('dialogopen', function(e) {
     var $elem = $(e.target);
     var $elemParent = $elem.parent();
@@ -91,17 +86,32 @@ $(window).on('load', function (e) {
     $( document ).ajaxComplete(function() {
       $('.ui-dialog.crm-container form').addClass('container gutters');
       $('.ui-dialog.crm-container form .crm-section').slice(1).addClass('col-12 col-xs-6');
-      $('.ui-dialog.crm-container form .crm-section').first().addClass('col-12');
-      //$('.ui-dialog #custom_37-input').appendTo('.ui-dialog #custom_37-inputplaceholder');
-      //$('.ui-dialog #custom_45-input').appendTo('.ui-dialog #custom_45-inputplaceholder');
+      $('.ui-dialog.crm-container form .crm -section').first().addClass('col-12');
+      // Help Text
+      $('.ui-dialog.crm-container .help').wrapInner( '<p></p>' );
+      $('.ui-dialog.crm-container .help').prepend('<div class="hicon">&#63;</div>');
+      $('.ui-dialog.crm-container .content').append(function() {
+        return $(this).siblings('.help');
+      });
+      $('.ui-dialog.crm-container .help .hicon').on('click',function(){
+        if($('.ui-dialog.crm-container .help p:visible').length)
+          $('.ui-dialog.crm-container .help p').hide("slide", { direction: "up" }, 1000);
+        else
+          $('.ui-dialog.crm-container .help p').show("slide", { direction: "up" }, 1000);    
+      });
+      $(document).on("click", function(event){
+        if(!$(event.target).closest(".ui-dialog.crm-container .help .hicon").length){
+            $('.ui-dialog.crm-container .help p').hide("slide", { direction: "up" }, 1000);
+        }
+      });
     });
   });
   // CiviCRM Reload parent after dialog form submit
+  $(document).on('dialogclose', function(e) {
     $( document ).ajaxComplete(function(e) {
-      $( document ).on('dialogclose', function(e) {
-        setTimeout(function(){// wait for 5 secs(2)
+      setTimeout(function(){// wait for 5 secs(2)
         location.reload(); // then reload the page.(3)
-      }, 500);
+      }, 1000); 
     });
   });
 
