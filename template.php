@@ -505,8 +505,11 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
 
   $form['manage_columns']['columns']['#attributes']['class'][] = 'container gutters content-end items-end';
   $form['manage_columns']['columns']['#process'] = array('pei_activities_form_process_checkboxes');
-  $form['manage_columns']['display_results_as']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
-  $form['manage_columns']['show']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  
+  $form['manage_results']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+  
+  $form['manage_results']['display_results_as']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['manage_results']['show']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
 
   $form['action_buttons']['#attributes']['class'][] = 'form-action-buttons';
 }
