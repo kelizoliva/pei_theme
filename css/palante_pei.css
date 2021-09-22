@@ -980,6 +980,7 @@ ul.action-links {
 }
 .form-action-buttons {
   float: right;
+  display: block!important;
 }
 
 /* general fields */
