@@ -1082,7 +1082,7 @@ input, optgroup, select {
 
 /* fieldset general */
 .js fieldset#edit-more-filters,
-.js fieldset#edit-manage-columns {
+.js fieldset#manage_results {
   border-bottom: 1px solid #d7d8d7;
   margin: .5em 0;
 }
