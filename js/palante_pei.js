@@ -108,14 +108,14 @@ $(window).on('load', function (e) {
       });
     });
   });
-  // CiviCRM Reload parent after dialog form submit
-  $(document).on('dialogclose', function(e) {
-    $( document ).ajaxComplete(function(e) {
-      setTimeout(function(){// wait for 5 secs(2)
-        location.reload(); // then reload the page.(3)
-      }, 1000);
+  // CiviCRM Reload parent after dialog form submits
+    $(document).on('dialogclose', function(e) {
+      if(!$('body').is('.view-name-expanded_views')){
+        setTimeout(function(){// wait for 5 secs(2)
+          location.reload(); // then reload the page.(3)
+        }, 500);
+      }
     });
-  });
 
 })(CRM.$);
 
