@@ -719,7 +719,9 @@ ul.action-links {
   font-size: 12px;
   display: block;
 }
-.aggregate-activity .container.gutters > .views-field-activity-type.col-12 {
+.aggregate-activity .container.gutters > .views-field-activity-type.col-12,
+.aggregate-activity .col-12.activity-heading
+{
   padding: 0;
 }
 @media (min-width: 480px) {
@@ -749,6 +751,7 @@ ul.action-links {
 .civicrm .aggregate-activity .general .views-field-hours-43 .field-content,
 .summary .general .views-field-hours-43 .field-content,
 .summary .general .views-field-nothing .field-content,
+.summary .general .views-field-nothing-1 .field-content,
 .general .overall .field-content {
   background: #4fb646;
   padding: .5em;
@@ -817,7 +820,9 @@ ul.action-links {
     overflow: auto;
   }
   .summary .container > .col-md-4.column-clear.views-field-hours-43,
-  .summary .container > .col-md-4.column-clear.views-field-nothing {
+  .summary .container > .col-md-4.column-clear.views-field-nothing,
+  .summary .container > .col-md-4.column-clear.views-field-nothing-1
+  {
     max-width: 100%;
     flex: 0 0 100%;
   }
