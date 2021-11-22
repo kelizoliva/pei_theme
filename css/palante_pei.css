@@ -503,6 +503,33 @@ ul.action-links {
   transform: rotate(-180deg);
 }
 
+/*************************** Saved Reports Modal *******************************/
+.saved-reports {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  border: 1px solid #4fb646;
+  padding: 10px;
+  max-height: 50%;
+  overflow: auto;
+  z-index: 1000;
+  -webkit-transition: 1s -webkit-filter linear;
+  -moz-transition: 1s -moz-filter linear;
+  -moz-transition: 1s filter linear;
+  -ms-transition: 1s -ms-filter linear;
+  -o-transition: 1s -o-filter linear;
+  transition: 1s filter linear,1s -webkit-filter linear;
+  background: #fff;
+  display: none;
+}
+.saved-reports.open {
+  display: block;
+}
+
+.view-saved-reports ul li {
+  list-style-type: none;
+}
+
 /*************************** CiviCRM General Dialog *******************************/
 .crm-container.ui-dialog {
   padding: 0;
@@ -977,6 +1004,35 @@ ul.action-links {
     position: relative;
     left: 0;
   }
+}
+
+/*************************** Reports ***************************/
+.form-item.form-type-textfield.form-item-action-buttons-title {
+  display: inline-block;
+}
+
+#action_buttons .hide {
+  display: none;
+}
+
+#action_buttons .form-submit {
+  background: #4fb646;
+  cursor: pointer;
+}
+
+#action_buttons .form-submit:hover {
+  color: #545454;
+  background: #e1e1e1;
+}
+
+#toggle_saved_reports {
+  max-width: 50px;
+  max-height: 50px;
+  padding: 10px;
+  position: fixed;
+  display: inline-block;
+  margin-left: -30px;
+  margin-top: -80px;
 }
 
 /*************************** Form Elements ***************************/

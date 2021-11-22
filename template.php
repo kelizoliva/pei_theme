@@ -197,8 +197,10 @@ function pei_activities_form_sliderfield_element_sliderfield_structure($element,
   if ($element['#display_ignore_button'] && !$element['#display_inputs']) {
     $element['ignore'] = array(
       '#type' => 'checkbox',
-      '#title' => t('Not Selected (Uncheck to select a value)'),
+//      '#title' => t('Not Selected (Uncheck to select a value)'),
+      '#title' => $element['#title'] . ' ' . t('(Check to ignore)'),
       '#value' => (is_null($value) || $value === ''),
+//      '#value' => !(is_null($value) || $value === ''),
       '#disabled' => $element['#disabled'],
       '#attributes' => array('class' => array('sliderfield-ignore'))
     );
@@ -514,3 +516,164 @@ function pei_theme_form_pei_contacts_form_alter(&$form, &$form_state) {
   $form['action_buttons']['#attributes']['class'][] = 'form-action-buttons';
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds grid classes, theme overrides, and processors to form elements.
+ * Some classes can be added directly to form elements, but the rest need theme overrides and custom processors.
+ */
+function pei_theme_form_pei_reports_form_alter(&$form, &$form_state) {
+
+  $filter_wrapper_class = 'col-12 col-xs-6 col-md-4';
+  $slider_class = 'col-11';
+  $date_class = 'col-11 col-xs-6';
+
+  $form['#attributes']['class'][] = 'container';
+
+  $form['filters']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+
+  // Main filters
+  $form['filters']['affiliates']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['educators']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['teen_councils']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['filters']['activity_type']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  // More filters
+  $form['more_filters']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+
+  // Member
+  $form['more_filters']['first_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['last_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['preferred_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['pronouns']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['race']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['additional_race']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['gender']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['additional_gender']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['sexual_orientation']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['additional_sexual_orientation']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['sex_assigned_at_birth']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['dob']['#name'] = 'dob';
+  $form['more_filters']['dob']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+  $form['more_filters']['dob']['from']['#wrapper_attributes']['class'][] = $date_class;
+  $form['more_filters']['dob']['to']['#wrapper_attributes']['class'][] = $date_class;
+
+  $form['more_filters']['age']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['age']['#attributes']['class'][] = $slider_class;
+  $form['more_filters']['age']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+  $form['more_filters']['income_proxy']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+  $form['more_filters']['enrollment_date']['#name'] = 'dob';
+  $form['more_filters']['enrollment_date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+  $form['more_filters']['enrollment_date']['from']['#wrapper_attributes']['class'][] = $date_class;
+  $form['more_filters']['enrollment_date']['to']['#wrapper_attributes']['class'][] = $date_class;
+
+  $form['more_filters']['withdrawal_date']['#name'] = 'dob';
+  $form['more_filters']['withdrawal_date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+  $form['more_filters']['withdrawal_date']['from']['#wrapper_attributes']['class'][] = $date_class;
+  $form['more_filters']['withdrawal_date']['to']['#wrapper_attributes']['class'][] = $date_class;
+
+  $form['more_filters']['reason_for_withdrawal']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['other_reason_for_withdrawal']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['member_email_address']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['member_phone_number']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['member_text_ok']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['member_ok_for_pei_to_contact']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['release_forms_received']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+  $form['more_filters']['tc_is_active']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+//  $form['more_filters']['member']['attendance_rate']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+//  $form['more_filters']['member']['attendance_rate']['#attributes']['class'][] = $slider_class;
+//  $form['more_filters']['member']['attendance_rate']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+//
+//  $form['more_filters']['member']['grade_level']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+//  $form['more_filters']['member']['grade_level']['#attributes']['class'][] = $slider_class;
+//  $form['more_filters']['member']['grade_level']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+//
+//  $form['more_filters']['member']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+//
+//
+//
+//
+//
+//
+////  $form['filters']['activity_title']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+//
+//
+//    $form['more_filters']['member_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+    $form['more_filters']['date']['#name'] = 'date';
+    $form['more_filters']['date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+    $form['more_filters']['date']['from']['#wrapper_attributes']['class'][] = $date_class;
+    $form['more_filters']['date']['to']['#wrapper_attributes']['class'][] = $date_class;
+
+    $form['more_filters']['school_name']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    $form['more_filters']['audience_age']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+
+    $form['more_filters']['hours']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    $form['more_filters']['hours']['#attributes']['class'][] = $slider_class;
+    $form['more_filters']['hours']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+
+    if(isset($form['more_filters']['people_reached'])) {
+        $form['more_filters']['people_reached']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+        $form['more_filters']['people_reached']['#attributes']['class'][] = $slider_class;
+        $form['more_filters']['people_reached']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+    }
+    if(isset($form['more_filters']['conversations'])) {
+        $form['more_filters']['conversations']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+        $form['more_filters']['conversations']['#attributes']['class'][] = $slider_class;
+        $form['more_filters']['conversations']['#process'] = array('pei_activities_form_sliderfield_element_sliderfield_structure');
+    }
+    if(isset($form['more_filters']['training_topic'])) {
+        $form['more_filters']['training_topic']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    }
+    if(isset($form['more_filters']['other_training_topic'])) {
+        $form['more_filters']['other_training_topic']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    }
+    if(isset($form['more_filters']['retreat_hours_type'])) {
+        $form['more_filters']['retreat_hours_type']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    }
+    if(isset($form['more_filters']['retreat_content_topic'])) {
+        $form['more_filters']['retreat_content_topic']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    }
+    if(isset($form['more_filters']['other_retreat_content_topic'])) {
+        $form['more_filters']['other_retreat_content_topic']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    }
+    if(isset($form['more_filters']['retreat_end_date'])) {
+        $form['more_filters']['retreat_end_date']['#name'] = 'retreat_end_date';
+        $form['more_filters']['retreat_end_date']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+        $form['more_filters']['retreat_end_date']['from']['#wrapper_attributes']['class'][] = $date_class;
+        $form['more_filters']['retreat_end_date']['to']['#wrapper_attributes']['class'][] = $date_class;
+    }
+    $form['more_filters']['pei_lesson_use']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    if(isset($form['more_filters']['presentation_informal_education_topic'])) {
+        $form['more_filters']['presentation_informal_education_topic']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    }
+    if(isset($form['more_filters']['other_presentation_informal_education_topic'])) {
+        $form['more_filters']['other_presentation_informal_education_topic']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    }
+    $form['more_filters']['attendance']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    $form['more_filters']['tc_is_active']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+    // Manage Columns: Member
+    $form['manage_columns']['member']['columns']['#attributes']['class'][] = 'container gutters content-end items-end';
+    $form['manage_columns']['member']['columns']['#process'] = array('pei_activities_form_process_checkboxes');
+
+    // Manage Columns: Teen Council
+    $form['manage_columns']['teen_council']['columns']['#attributes']['class'][] = 'container gutters content-end items-end';
+    $form['manage_columns']['teen_council']['columns']['#process'] = array('pei_activities_form_process_checkboxes');
+
+    // Manage Columns: Activity
+    $form['manage_columns']['activity']['columns']['#attributes']['class'][] = 'container gutters content-end items-end';
+    $form['manage_columns']['activity']['columns']['#process'] = array('pei_activities_form_process_checkboxes');
+
+    $form['manage_results']['#theme_wrappers'] = array('pei_activities_form_fieldset');
+
+    $form['manage_results']['display_results_as']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    $form['manage_results']['show']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+    $form['manage_results']['contact_subtype']['#wrapper_attributes']['class'][] = $filter_wrapper_class;
+
+    $form['action_buttons']['#attributes']['class'][] = 'form-action-buttons';
+}

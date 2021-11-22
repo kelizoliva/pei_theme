@@ -21,11 +21,35 @@ Backdrop.behaviors.base = {
             $('.modal, .add-activity ul, .add-activity span.caret').removeClass('open');
         }
       });
+
+      // Reports button modal
+      $('#toggle_saved_reports').bind("click", function() {
+        $('.saved-reports').toggleClass('open');
+        var ajaxView = getAjaxViewSelector('saved_reports');
+        // $(ajaxView).triggerHandler('RefreshView');
+      });
+
+      // Reports
+      $('#open-save').bind('click', function() {
+        $('#open-save').toggleClass('hide');
+        $('#report_title').toggleClass('hide');
+        $('.save_report').toggleClass('hide');
+      });
+
       // Accordion header buttons
       $('.views-accordion-header .actions a').click(function () {
         self.location.href = $(this).attr("href");
         return false;
       });
+
+      // Retrieves the AJAX selector for a view by its view name
+      var getAjaxViewSelector = function(needle) {
+        for(var viewName in Backdrop.settings.views.ajaxViews) {
+          if(Backdrop.settings.views.ajaxViews[viewName].view_name == needle) {
+            return '.view-dom-id-' + Backdrop.settings.views.ajaxViews[viewName].view_dom_id;
+          }
+        }
+      };
     });
   }
 };
