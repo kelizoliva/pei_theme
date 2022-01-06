@@ -30,7 +30,7 @@ Backdrop.behaviors.base = {
         e.preventDefault();
         $('.saved-reports').animate({
           width: "toggle"
-        });
+        }, 1500 );
         var ajaxView = getAjaxViewSelector('saved_reports');
         // $(ajaxView).triggerHandler('RefreshView');
       });
