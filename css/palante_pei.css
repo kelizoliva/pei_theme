@@ -504,15 +504,17 @@ ul.action-links {
 }
 
 /*************************** Saved Reports Modal *******************************/
-.saved-reports {
+.saved-reports-container {
   position: fixed;
   top: 100px;
   right: 0;
+  z-index: 99;
+}
+.saved-reports {
   border: 1px solid #4fb646;
   padding: 10px;
   max-height: 50%;
   overflow: auto;
-  z-index: 1000;
   -webkit-transition: 1s -webkit-filter linear;
   -moz-transition: 1s -moz-filter linear;
   -moz-transition: 1s filter linear;
@@ -523,7 +525,25 @@ ul.action-links {
   display: none;
 }
 .saved-reports.open {
-  display: block;
+  display: inline-block;
+}
+
+.saved-reports-toggle {
+  background: url('/themes/pei-theme/images/reports.svg');
+  max-width: 50px;
+  max-height: 50px;
+  padding: 10px;
+  float: left;
+  display: inline-block;
+  -webkit-transition: 1s -webkit-filter linear;
+  -moz-transition: 1s -moz-filter linear;
+  -moz-transition: 1s filter linear;
+  -ms-transition: 1s -ms-filter linear;
+  -o-transition: 1s -o-filter linear;
+}
+
+.saved-reports .block-content, .saved-reports .block-title {
+  width: 200px;
 }
 
 .view-saved-reports ul li {

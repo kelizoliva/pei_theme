@@ -23,8 +23,14 @@ Backdrop.behaviors.base = {
       });
 
       // Reports button modal
-      $('#toggle_saved_reports').bind("click", function() {
-        $('.saved-reports').toggleClass('open');
+      $('<div class="saved-reports-toggle">').insertBefore('.saved-reports');
+      $('.saved-reports, .saved-reports-toggle').wrapAll('<div class="saved-reports-container"></div>')
+
+      $('#toggle_saved_reports, .saved-reports-toggle').bind("click", function(e) {
+        e.preventDefault();
+        $('.saved-reports').animate({
+          width: "toggle"
+        });
         var ajaxView = getAjaxViewSelector('saved_reports');
         // $(ajaxView).triggerHandler('RefreshView');
       });
