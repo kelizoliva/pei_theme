@@ -1050,6 +1050,7 @@ ul.action-links {
 #action_buttons .form-submit {
   background: #4fb646;
   cursor: pointer;
+  color: #000000;
 }
 
 #action_buttons .form-submit:hover {
