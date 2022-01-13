@@ -511,8 +511,9 @@ ul.action-links {
   z-index: 99;
 }
 .saved-reports {
-  border: 1px solid #4fb646;
+  background: #272929;
   max-height: 50%;
+  border-radius: 0 0 0 5px;
   overflow: auto;
   padding: 10px 0;
   -webkit-transition: 1s -webkit-filter linear;
@@ -521,7 +522,6 @@ ul.action-links {
   -ms-transition: 1s -ms-filter linear;
   -o-transition: 1s -o-filter linear;
   transition: 1s filter linear,1s -webkit-filter linear;
-  background: #fff;
   display: none;
 }
 .saved-reports.open {
@@ -529,10 +529,15 @@ ul.action-links {
 }
 
 .saved-reports-toggle {
-  background: url('/themes/pei-theme/images/reports.svg');
+  background: url('/themes/pei-theme/images/save.svg');
+  background-repeat: no-repeat;
+  background-color: #454646;
+  background-size: 70%;
+  border-radius: 5px 0 0 5px;
+  background-position: center center;
   max-width: 50px;
   max-height: 50px;
-  padding: 10px;
+  padding: 15px;
   float: left;
   display: inline-block;
   -webkit-transition: 1s -webkit-filter linear;
@@ -545,10 +550,16 @@ ul.action-links {
 .saved-reports .block-content, .saved-reports .block-title {
   width: 200px;
   padding: 0 10px;
+  color: #ffffff;
 }
 
 .view-saved-reports ul li {
-  list-style-type: none;
+  color: #ffffff;
+}
+
+.view-saved-reports ul li a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 /*************************** CiviCRM General Dialog *******************************/
