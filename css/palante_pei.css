@@ -124,6 +124,9 @@ body:not(.logged-in) .l-main .container.justify-end {
 th {
   background: #f8f9f8;
 }
+h6 {
+  font-size: .95rem;
+}
 
 /* Buttons */
 .button,
@@ -748,11 +751,15 @@ ul.action-links {
   margin-bottom: .5em;
 }
 .aggregate-activity h3,
-.civicrm .dashlet .aggregate-activity :not(.view-header) h3 {
+.topbottom-councils h3,
+.civicrm .dashlet .aggregate-activity :not(.view-header) h3,
+.civicrm .dashlet .topbottom-councils :not(.view-header) h3 {
   padding: 0;
 }
 .aggregate-activity h3,
-.civicrm .dashlet .aggregate-activity h3 {
+.civicrm .dashlet .aggregate-activity h3,
+.topbottom_councils h3,
+.civicrm .dashlet .topbottom-councils h3 {
   font-size: 20px;
   font-weight: 900;
   font-family: 'd-din_expdinexp-bold', sans-serif;
@@ -779,7 +786,7 @@ ul.action-links {
   display: block;
 }
 .aggregate-activity .container.gutters > .views-field-activity-type.col-12,
-.aggregate-activity .col-12.activity-heading
+.aggregate-activity .col-12.activity-heading, .topbottom-councils .col-12.tb-heading
 {
   padding: 0;
 }
@@ -793,7 +800,6 @@ ul.action-links {
     max-width: 32.333333%;
   }
 }
-
 
 /** members **/
 .summary .actions {
@@ -950,6 +956,17 @@ ul.action-links {
 }
 .dropbutton-arrow {
   border-width: 0.25em 0.25em 0;
+}
+
+/* Top and Boottom Teen Councils */
+.topbottom-councils tbody {
+  background: #f0f0f0;
+}
+.topbottom-councils table, .topbottom-councils th, .topbottom-councils td {
+  border: 1px solid #4eb646;
+}
+.topbottom-councils table {
+  font-size: .9rem;;
 }
 
 /*************************** Civi Screen Views *******************************/
