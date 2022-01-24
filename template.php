@@ -199,8 +199,8 @@ function pei_activities_form_sliderfield_element_sliderfield_structure($element,
       '#type' => 'checkbox',
 //      '#title' => t('Not Selected (Uncheck to select a value)'),
       '#title' => $element['#title'] . ' ' . t('(Check to ignore)'),
-      '#value' => (is_null($value) || $value === ''),
-//      '#value' => !(is_null($value) || $value === ''),
+//      '#value' => (is_null($value) || $value === ''),
+      '#value' => !(is_null($value) || $value === ''),
       '#disabled' => $element['#disabled'],
       '#attributes' => array('class' => array('sliderfield-ignore'))
     );
