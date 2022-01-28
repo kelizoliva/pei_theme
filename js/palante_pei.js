@@ -23,14 +23,16 @@ Backdrop.behaviors.base = {
       });
 
       // Reports button modal
-      $('<div class="saved-reports-toggle">').insertBefore('.saved-reports');
-      $('.saved-reports, .saved-reports-toggle').wrapAll('<div class="saved-reports-container"></div>')
+      if($(".saved-reports-toggle").length==0) {
+        $('<div class="saved-reports-toggle">').insertBefore('.saved-reports');
+      }
+      $('.saved-reports, .saved-reports-toggle').wrapAll('<div class="saved-reports-container"></div>');
 
-      $('#toggle_saved_reports, .saved-reports-toggle').bind("click", function(e) {
+      $('#toggle_saved_reports, .saved-reports-toggle').unbind().bind("click", function(e) {
         e.preventDefault();
         $('.saved-reports').animate({
           width: "toggle"
-        }, 1500 );
+        }, 1000 );
         var ajaxView = getAjaxViewSelector('saved_reports');
         // $(ajaxView).triggerHandler('RefreshView');
       });
@@ -39,6 +41,9 @@ Backdrop.behaviors.base = {
       $('#open-save').bind('click', function() {
         $('#open-save').toggleClass('hide');
         $('#report_title').toggleClass('hide');
+        $('#report_title .form-text').animate({
+          width: 'toggle'
+        }, 1000 );
         $('.save_report').toggleClass('hide');
       });
 
@@ -118,7 +123,7 @@ $(window).on('load', function (e) {
     $( document ).ajaxComplete(function() {
       $('.ui-dialog.crm-container form').addClass('container gutters');
       $('.ui-dialog.crm-container form .crm-section').slice(1).addClass('col-12 col-xs-6');
-      $('.ui-dialog.crm-container form .crm -section').first().addClass('col-12');
+      $('.ui-dialog.crm-container form .crm-section').first().addClass('col-12');
       // Help Text
       $('.ui-dialog.crm-container .help').wrapInner( '<p></p>' );
       $('.ui-dialog.crm-container .help').prepend('<div class="hicon">&#63;</div>');

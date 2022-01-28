@@ -1084,6 +1084,9 @@ ul.action-links {
   margin-left: -30px;
   margin-top: -80px;
 }
+#report_title .form-text {
+  display: none;
+}
 
 /*************************** Form Elements ***************************/
 .fieldset-wrapper:not(#edit-manage-columns) > div:not(.fieldset-wrapper) .form-item, .field-name-comment-body {
@@ -1575,6 +1578,10 @@ article.profile > .form-item > label {
 }
 .crm-container .crm-submit-buttons, .crm-container .action-link {
   height: 60px;
+}
+/* Extraneous buttons showing up on modal forms */
+.crm-container.ui-dialog .crm-submit-buttons {
+  display: none;
 }
 
 /* CiviCRM Tables and Forms */
