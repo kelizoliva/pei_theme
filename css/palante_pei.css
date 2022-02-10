@@ -1604,11 +1604,12 @@ article.profile > .form-item > label {
 .ui-dialog  table {
   font-size: 1.2rem;
 }
-.crm-container th, .crm-container table.display thead th, .crm-container table thead.sticky th, .crm-container table.caseSelector tr.columnheader th {
+.crm-container th, .crm-container table.display thead th, .crm-container .table.display .thead .cell, .crm-container table thead.sticky th, .crm-container table.caseSelector tr.columnheader th {
   font-size: 1.25em;
   color: #282A29;
+  padding: 3px 18px 3px 10px;
 }
-.crm-container table.display thead th {
+.crm-container table.display thead th, .crm-container .table.display .thead .cell {
   border-bottom: solid #d7d8d7 1px;
 }
 .crm-container .replace-plain, .crm-container textarea, .crm-container select.crm-form-multiselect {
