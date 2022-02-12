@@ -1604,6 +1604,16 @@ article.profile > .form-item > label {
 .ui-dialog  table {
   font-size: 1.2rem;
 }
+.table {
+  display: table;
+}
+.cell {
+  display: table-cell;
+  padding: 5px;
+}
+.row, .thead, .tbody {
+  display: table-row;
+}
 .crm-container th, .crm-container table.display thead th, .crm-container .table.display .thead .cell, .crm-container table thead.sticky th, .crm-container table.caseSelector tr.columnheader th {
   font-size: 1.25em;
   color: #282A29;
